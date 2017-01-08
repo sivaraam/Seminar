@@ -18,7 +18,7 @@
 }
 .button:hover 	
 {
-	background-color:yellow;
+	background-color:lightgrey;
 }
 </style>
   <script type="text/javascript">
@@ -30,7 +30,7 @@
   </script>
   </head>
 <body>
-<form name="a" method="" action="/Ganesh/hello1.jsp">
+<form name="a" method="" action="/Ganesh/seminar_home.jsp">
 <h2>
 <center> <font face=Helvetica> SEMINAR HALL </font> </center>
 </h2>
