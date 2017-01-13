@@ -7,7 +7,7 @@
     border: none;
     width: 20px;
     color: blue;
-    padding: 5px 18px;
+    padding: 5px 35px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -15,6 +15,11 @@
     margin: 4px 2px;
     cursor: pointer;
 	border-radius:5px;
+	white-space:normal;
+}
+.sub
+{
+	font-size:20px;
 }
 .button:hover 	
 {
@@ -22,18 +27,29 @@
 }
 </style>
   <script type="text/javascript">
-  function selectt(a)
+  var curr_highlight = "day1";
+  function highlight(e)
   {
-    var k=document.getElementById("datese");
-	k.value= a;
+	  document.getElementById(curr_highlight).setAttribute("style","background-color:none");
+      e.target.setAttribute( "style", "background-color:lightgrey" );
+	  curr_highlight = e.target.getAttribute("id");
   }
+  function registerEvents()
+  {
+	  for ( var number = 1; number <= 7; number += 1 )
+	  {
+	     document.getElementById("day"+number).addEventListener("click",highlight,false);
+	  }
+  }
+window.addEventListener( "load", registerEvents, false );
   </script>
   </head>
 <body>
 <form name="a" method="" action="/Ganesh/seminar_home.jsp">
 <h2>
 <center> <font face=Helvetica> SEMINAR HALL </font> </center>
-</h2>
+</h2><br><br><br>
+<center>
 <select> value="select"> -- SELECT --</option>
 <option value="cse"> CSE </option>
 <option value="ece"> ECE </option>
@@ -42,40 +58,21 @@
 <option value="ice"> ICE </option>
 <option value="it"> IT </option>
 <option value="mba"> MBA </option>
-<option value="civil"> CIVIL </option>
 </select>
 <br>
 <h2> Date </h2>
-<% SimpleDateFormat sdf = new SimpleDateFormat("dd");
-String s = new String(sdf.format(new Date()));
-String s1 = new String(sdf.format(new Date().getTime()+ 24*60*60*1000));
-String s2 = new String(sdf.format(new Date().getTime()+ 2*24*60*60*1000));
-String s3 = new String(sdf.format(new Date().getTime()+ 3*24*60*60*1000));
-String s4 = new String(sdf.format(new Date().getTime()+ 4*24*60*60*1000));
-String s5 = new String(sdf.format(new Date().getTime()+ 5*24*60*60*1000));
-String s6 = new String(sdf.format(new Date().getTime()+ 6*24*60*60*1000));%>
-<input type="text" id="datese" name="abc">
-<input type="button" id="today" class="button" value="<%=s%>" onclick="selectt('<%=s%>')">
-<input type="button" id="today" class="button" value="<%=s1%>" onclick="selectt('<%=s1%>')">
-<input type="button" id="today" class="button" value="<%=s2%>" onclick="selectt('<%=s2%>')">
-<input type="button" id="today" class="button" value="<%=s3%>" onclick="selectt('<%=s3%>')">
-<input type="button" id="today" class="button" value="<%=s4%>" onclick="selectt('<%=s4%>')">
-<input type="button" id="today" class="button" value="<%=s5%>" onclick="selectt('<%=s5%>')">
-<input type="button" id="today" class="button" value="<%=s6%>" onclick="selectt('<%=s6%>')">
+<% SimpleDateFormat sdf = new SimpleDateFormat("dd EEE");
+String[] s = new String[15];
+for(int i = 0; i < 7; i+=1)
+{
+	s[i] = new String(sdf.format(new Date().getTime()+ i*24*60*60*1000));
+}
+for(int i = 0;i < 7; i+=1)
+{%>
+    <input type="button" id="day<%=i+1%>" class="button" value='<%=s[i]%>'>	
+<%}%>
 <br>
-<!--
-<select>
-<option value="dat"> <%=s%></option>
-<option value="dat"> <%=s1%></option>
-<option value="dat"> <%=s2%></option>
-<option value="dat"> <%=s3%></option>
-<option value="dat"> <%=s4%></option>
-<option value="dat"> <%=s5%></option>
-<option value="dat"> <%=s6%></option>
-</select>
--->
-<br>
-<h2> Hour </h2>
+<h2> Period </h2>
 <select>
 <option value="sel"> --- </option>
 <option value="one"> I </option>
@@ -86,8 +83,9 @@ String s6 = new String(sdf.format(new Date().getTime()+ 6*24*60*60*1000));%>
 <option value="six"> VI </option>
 <option value="seven"> VII </option>
 <option value="eight"> VIII </option>
-</select>
-<input type="submit" value="submit" >
+</select><br><br><br><br>
+<input type="submit" value="submit" class="sub" >
+</center>
 </form> 
 </body>
 </html>
