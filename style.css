@@ -1,0 +1,65 @@
+* {
+	font-family: Helvetica;
+}
+
+h2
+{
+	text-align:center
+}
+
+table#status
+{
+	border:1px solid black;
+	padding:10px;
+	width:50%;
+	margin: auto;
+}
+
+table#form
+{
+	border-spacing: 10px 5px;
+	margin: 0px auto;
+}
+
+
+td#title
+{
+	text-align: right center;
+	
+}
+
+td#content
+{
+	text-align:left center;
+}
+
+td#submit
+{
+	text-align:center
+}
+
+.button {
+	background-color: #FFFFFF;
+	border: none;
+	width: 20px;
+	color: blue;
+	padding: 5px 35px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius:5px;
+	white-space:normal;
+}
+
+.button:hover 	
+{
+	background-color:lightgrey;
+}
+
+
+input#submit{
+	font-size: 20px
+}
