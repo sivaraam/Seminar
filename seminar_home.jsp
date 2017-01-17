@@ -3,17 +3,18 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
+  <title> Seminar hall registration </title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="script.js"> </script>
  </head>
 
  <body>
- <h2> Seminar Hall Registration </h2>
+ <h2> Seminar hall Registration </h2>
   <form name="a" method="POST" action="seminar_home.jsp">
-   <table id="form">
+   <table class="form">
     <tr valign=top>
-     <td id="title"> Date </td>
-     <td id="content">
+     <td class="title"> Date </td>
+     <td class="content">
       <% SimpleDateFormat sdf = new SimpleDateFormat("dd EEE");
       String[] s = new String[15];
       for(int i = 0; i < 5; i+=1)
@@ -30,8 +31,8 @@
     </tr>
 
     <tr valign=top>
-     <td id="title"> Hall </th>
-     <td id="content">
+     <td class="title"> Hall </th>
+     <td class="content">
       <select> 
        <option value="cse">  CSE </option>
        <option value="ece">  ECE </option>
@@ -45,8 +46,8 @@
     </tr>
 
     <tr valign=top>
-     <td id="content" colspan=2>
-      <table id="status">
+     <td class="content" colspan=2>
+      <table class="status" >
        <thead>
         <tr>
          <th> I </th>
@@ -60,22 +61,22 @@
         </tr>
        </thead>
 
-       <tbody id="status">
+       <tbody class="status" id="status">
        </tbody>
       </table>
      </td>
     </tr>
 
     <tr valign=top>
-     <td id="title"> Class </td>
-     <td id="content">
+     <td class="title"> Class </td>
+     <td class="contents">
       <div id="classes"> </div>
      </td>
     </tr>		     
 
     <tr valign=top>
-     <td id="submit" colspan=2>
-      <input id="submit" type="submit" value="Register" >
+     <td class="submit" colspan=2>
+      <input class="submit" type="submit" value="Register" >
      </td>
     </tr>
    </table>

@@ -7,7 +7,7 @@ h2
 	text-align:center
 }
 
-table#status
+table.status
 {
 	border:1px solid black;
 	padding:10px;
@@ -15,25 +15,25 @@ table#status
 	margin: auto;
 }
 
-table#form
+table.form
 {
 	border-spacing: 10px 5px;
 	margin: 0px auto;
 }
 
 
-td#title
+td.title
 {
 	text-align: right center;
 	
 }
 
-td#content
+td.content
 {
 	text-align:left center;
 }
 
-td#submit
+td.submit
 {
 	text-align:center
 }
@@ -60,6 +60,6 @@ td#submit
 }
 
 
-input#submit{
+input.submit{
 	font-size: 20px
 }
