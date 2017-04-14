@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Seminar hall registration </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"> </script>
+  </head>
+
+  <body onload = "loadDates()">
+    <h2> Seminar hall Registration </h2>
+    <form name="a" method="POST" action="seminar_home.jsp">
+      <div class = "title" >
+        <label for = "date">Date</label>
+         <span id = "date"></span>
+      </div>
+      <div class = "title">
+        <label for= "hall">Hall</label>
+        <select name = "hall" class = "content">
+	      <option value="cse">  CSE </option>
+	      <option value="ece">  ECE </option>
+	      <option value="eee">  EEE </option>
+	      <option value="it">   IT </option>
+	      <option value="ice">  ICE </option>
+	      <option value="mech"> MECH </option>
+	      <option value="mba">  MBA </option>
+        </select>
+      </div>
+      <div class = "table">
+      </div>
+      <div class = "submit">
+        <input class = "submit" type="submit" value="Register" />
+      </div>
+    </form>
+  </body>
+</html>
