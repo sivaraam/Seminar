@@ -15,7 +15,7 @@ function registerEvents()
 	}
 }
 function loadDates() {
-   	    var i,text;
+      var i,text;
 	    var day = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 	    var newDate = new Date();  
 	    text = "";
