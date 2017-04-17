@@ -6,12 +6,14 @@ h2
 {
 	text-align:center
 }
+
 form
 {
 	margin: 0px auto;
 	padding:10px;
 	width:35%;
 }
+
 .div-table{
   margin-top:40px;
   display:table;
@@ -20,27 +22,33 @@ form
   border:1px solid  #666666;
   border-spacing:5px;/*cellspacing:poor IE support for  this*/
 }
+
 .div-table-row{
   display:table-row;
   width:auto;
   clear:both;
 }
+
 .div-table-col{
   float:left;/*fix for  buggy browsers*/
   display:table-column;
   width:100px;
   background-color:#ccc;
-}.title
+}
+
+.title
 {
 	text-align: left;
 	margin-top:20px;
 	padding-bottom:10px;
 }
+
 .content
 {
 	text-align:center;
 	margin-left:40px;
 }
+
 .button {
 	background-color: #FFFFFF;
 	border: none;
@@ -56,10 +64,12 @@ form
 	border-radius:5px;
 	white-space:normal;
 }
+
 .button:hover 	
 {
 	background-color:lightgrey;
 }
+
 .submit
 {
 	text-align:center;
