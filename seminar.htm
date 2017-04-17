@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Seminar Hall Booking </title>
-	  <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="script.js"> </script>
-  </head>
+	<head>
+		<title> Seminar Hall Booking </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="script.js"> </script>
+	</head>
 
   <body onload = "loadDates()">
         <div class = "logo">
             <img src="header01.jpg" alt="saralogo" align="middle"/>
         </div>
 
-        <form name="a" method="POST" action="seminar_home.jsp">
-		<div class="title">
-			<h2> Seminar Hall Booking </h2>
-		</div>
-		<div class = "title" >
-			<span>  Date </span>
-			<span id = "date"></span>
-		</div>
-		<div class = "title">
-			<label for= "hall">Hall</label>
-			<select id = "hall" class = "content">
-				<option value="cse">  CSE </option>
-				<option value="ece">  ECE </option>
-				<option value="eee">  EEE </option>
-				<option value="it">   IT </option>
-				<option value="ice">  ICE </option>
-				<option value="mech"> MECH </option>
-				<option value="mba">  MBA </option>
-			</select>
-		</div>
-				<div class="div-table">
-			<div class="div-table-div-table-col">
-				<div class="div-table-col">  I </div>
-				<div class="div-table-col"> II </div>
-				<div class="div-table-col"> III </div>
-				<div class="div-table-col"> IV </div>
-				<div class="div-table-col"> V </div>
-				<div class="div-table-col"> VI </div>
-				<div class="div-table-col"> VII </div>
-				<div class="div-table-col"> VIII </div>
+        <form name="a" method="POST" action="seminar">
+			<div class="title">
+				<h2> Seminar Hall Booking </h2>
 			</div>
-			<div class="div-table-row">
-				<div class="div-table-col"> Available </div>
-				<div class="div-table-col"> Available </div>
-				<div class="div-table-col"> Available </div>
-				<div class="div-table-col"> Available </div>
-				<div class="div-table-col"> Available </div>
-				<div class="div-table-col"> Available </div>
-				<div class="div-table-col"> Available </div>
-				<div class="div-table-col"> Available </div>
+			<div class = "title" >
+				<span>  Date </span>
+				<span id = "date"></span>
 			</div>
-		</div>
+			<div class = "title">
+				<label for= "hall">Hall</label>
+				<select id = "hall" class = "content">
+					<option value="cse">  CSE </option>
+					<option value="ece">  ECE </option>
+					<option value="eee">  EEE </option>
+					<option value="it">   IT </option>
+					<option value="ice">  ICE </option>
+					<option value="mech"> MECH </option>
+					<option value="mba">  MBA </option>
+				</select>
+			</div>
+			<table>
+				<tr>
+					<th>  I </th>
+					<th> II </th>
+					<th> III </th>
+					<th> IV </th>
+					<th> V </th>
+					<th> VI </th>
+					<th> VII </th>
+					<th> VIII </th>
+				</tr>
+				<tr>
+					<td> Available </td>
+					<td> Available </td>
+					<td> Available </td>
+					<td> Available </td>
+					<td> Available </td>
+					<td> Available </td>
+					<td> Available </td>
+					<td> Available </td>
+				</tr>
+			</table>
 		<div class = "submit">
 			<input class = "submit" type="submit" value="Register" />
 		</div>
 		</form>
-		<center>
-		</center>
   </body>
 </html>
