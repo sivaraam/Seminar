@@ -2,7 +2,6 @@
 <html>
 	<head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="css/style.css">
         <title> Seminar Hall Booking </title>
         <script type="text/javascript" src="js/script.js"> </script>
 	</head>
@@ -16,7 +15,7 @@
 		</header>
 
 		<form name="hall-booking-form" method="POST" action="book-hall">
-			<div class = "form-item">
+			<div>
 				<span>  Date </span>
 				<span id = "date-buttons">
 					<!--
@@ -29,9 +28,9 @@
 				</span>
 			</div>
 
-			<div class = "form-item">
+			<div>
 				<label for= "hall">Hall</label>
-				<span class = "form-sub-item">
+				<span>
 					<select id = "hall">
 						<option value="cse">  CSE </option>
 						<option value="ece">  ECE </option>
@@ -44,7 +43,7 @@
 				</span>
 			</div>
 
-			<div class = "form-item">
+			<div>
 				<table>
 					<caption>Seminar Hall Status</caption>
 					<thead>
@@ -74,8 +73,8 @@
 				</table>
 			</div>
 
-			<div class="form-item submit">
-				<input class = "form-submit-button" type="submit" value="Register" />
+			<div>
+				<input type="submit" value="Register" />
 			</div>
 		</form>
   </body>
