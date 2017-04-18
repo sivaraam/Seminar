@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/style.css">
+        <title> Seminar Hall Booking </title>
+        <script type="text/javascript" src="js/script.js"> </script>
+	</head>
+
+  <body onload = "loadDates()">
+		<header>
+			<figure>
+				<img src="images/header01.jpg" alt="saralogo" />
+			</figure>
+			<h1> Seminar Hall Booking </h1>
+		</header>
+
+		<form name="hall-booking-form" method="POST" action="book-hall">
+			<div class = "form-item">
+				<span>  Date </span>
+				<span id = "date-buttons">
+					<!--
+						Date buttons to be loaded by JS on page load
+						The buttons would have the format,
+
+							<input type="button" id= "<DATE-IDENTIFIER>" class="form-item date-button" value = "<DATE-VALUE>" />
+
+					-->
+				</span>
+			</div>
+
+			<div class = "form-item">
+				<label for= "hall">Hall</label>
+				<span class = "form-sub-item">
+					<select id = "hall">
+						<option value="cse">  CSE </option>
+						<option value="ece">  ECE </option>
+						<option value="eee">  EEE </option>
+						<option value="it">   IT </option>
+						<option value="ice">  ICE </option>
+						<option value="mech"> MECH </option>
+						<option value="mba">  MBA </option>
+					</select>
+				</span>
+			</div>
+
+			<div class = "form-item">
+				<table>
+					<caption>Seminar Hall Status</caption>
+					<thead>
+						<tr>
+							<th>  I </th>
+							<th> II </th>
+							<th> III </th>
+							<th> IV </th>
+							<th> V </th>
+							<th> VI </th>
+							<th> VII </th>
+							<th> VIII </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td> Available </td>
+							<td> Available </td>
+							<td> Available </td>
+							<td> Available </td>
+							<td> Available </td>
+							<td> Available </td>
+							<td> Available </td>
+							<td> Available </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="form-item submit">
+				<input class = "form-submit-button" type="submit" value="Register" />
+			</div>
+		</form>
+  </body>
+</html>
