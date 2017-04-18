@@ -1,0 +1,52 @@
+body {
+  font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-size: 0.9em;
+  text-align:center;
+}
+
+.form-container {
+    margin: 0 auto; /*Make form horizontally centered */
+    width: 640px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+.form-items-container {
+  font-size: 100%;
+  width: 100%;
+  padding: 2% 4%;
+}
+
+.form-item {
+  display: block;
+  margin: 0;
+  padding: 0.25em 0.32em .125em .56em;
+  position: relative;
+}
+
+.form-item {
+  width: 61%
+}
+
+label.item-description {
+  font-weight: bold;
+  font-size: 100%;
+  padding-bottom: 5px;
+  display: block;
+}
+
+.item{
+  padding: 0.25em 0em;
+}
+
+table {
+  border:1px solid black;
+  border-collapse: collapse;
+
+}
+
+table td, table th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 0.25em;
+}

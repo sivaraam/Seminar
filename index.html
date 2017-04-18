@@ -2,6 +2,7 @@
 <html>
 	<head>
         <meta charset="utf-8" />
+				<link rel="stylesheet" href="css/style.css">
         <title> Seminar Hall Booking </title>
         <script type="text/javascript" src="js/script.js"> </script>
 	</head>
@@ -14,68 +15,75 @@
 			<h1> Seminar Hall Booking </h1>
 		</header>
 
-		<form name="hall-booking-form" method="POST" action="book-hall">
-			<div>
-				<span>  Date </span>
-				<span id = "date-buttons">
-					<!--
-						Date buttons to be loaded by JS on page load
-						The buttons would have the format,
+		<div class="form-container">
+			<form name="hall-booking-form" method="POST" action="book-hall">
+				<div class="form-items-container">
+					<div class="form-item">
+						<label class="item-description" for="date-buttons"> Date </label>
+						<span  class="item" id = "date-buttons">
+						 <!--
+								Date buttons to be loaded by JS on page load
+								The buttons wodiv class="form-items-wrapperd have the format,
 
-							<input type="button" id= "<DATE-IDENTIFIER>" class="form-item date-button" value = "<DATE-VALUE>" />
+									<input type="radio" id="DATE-IDENTIFIER" name="date" value="DATE-VALUE"> DATE-VALUE </input>
 
-					-->
-				</span>
-			</div>
+							-->
+						</span>
+					</div>
 
-			<div>
-				<label for= "hall">Hall</label>
-				<span>
-					<select id = "hall">
-						<option value="cse">  CSE </option>
-						<option value="ece">  ECE </option>
-						<option value="eee">  EEE </option>
-						<option value="it">   IT </option>
-						<option value="ice">  ICE </option>
-						<option value="mech"> MECH </option>
-						<option value="mba">  MBA </option>
-					</select>
-				</span>
-			</div>
+					<div class="form-item">
+						<label class="item-description" for="halls"> Hall </label>
+						<div class="item">
+							<select id="halls" name="hall">
+								<<option value selected></option>
+								<option value="cse">  CSE </option>
+								<option value="ece">  ECE </option>
+								<option value="eee">  EEE </option>
+								<option value="it">   IT </option>
+								<option value="ice">  ICE </option>
+								<option value="mech"> MECH </option>
+								<option value="mba">  MBA </option>
+							</select>
+						</div>
+					</div>
 
-			<div>
-				<table>
-					<caption>Seminar Hall Status</caption>
-					<thead>
-						<tr>
-							<th>  I </th>
-							<th> II </th>
-							<th> III </th>
-							<th> IV </th>
-							<th> V </th>
-							<th> VI </th>
-							<th> VII </th>
-							<th> VIII </th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td> Available </td>
-							<td> Available </td>
-							<td> Available </td>
-							<td> Available </td>
-							<td> Available </td>
-							<td> Available </td>
-							<td> Available </td>
-							<td> Available </td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+					<div class="form-item">
+						<label class="item-description">Seminar Hall Status</label>
+						<div class="item">
+							<table>
+								<thead>
+									<tr>
+										<th>  I </th>
+										<th> II </th>
+										<th> III </th>
+										<th> IV </th>
+										<th> V </th>
+										<th> VI </th>
+										<th> VII </th>
+										<th> VIII </th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td> Available </td>
+										<td> Available </td>
+										<td> Available </td>
+										<td> Available </td>
+										<td> Available </td>
+										<td> Available </td>
+										<td> Available </td>
+										<td> Available </td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 
-			<div>
-				<input type="submit" value="Register" />
-			</div>
-		</form>
+					<div class="form-item">
+						<input type="submit" name="submit" value="Book" />
+					</div>
+				</div>
+			</form>
+		</div>
   </body>
 </html>
