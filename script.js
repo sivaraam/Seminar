@@ -16,9 +16,23 @@ function callJSP()
 	$.post("seminar.jsp", { dat : value.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue } , 
 	function(data,status){
 		document.getElementById("tab").rows[1].innerHTML=data;
-	});
-	$("table").show();	
+		$("table").show();
+	});	
 }
+/*function callJSP()
+{
+	var value = $(document.getElementById(curr_highlight)).val();
+	var hallValue = $("#hall").val();
+	$.ajax({
+		type: "POST",
+        url: "seminar",
+        data: { dat : value.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue },
+        success:function(result){
+            document.getElementById("tab").rows[1].innerHTML=data;
+		$("table").show();
+		}
+	});	
+}*/
 function call(e)
 {
 	callJSP();

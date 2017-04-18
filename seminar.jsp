@@ -9,28 +9,26 @@ Class.forName("oracle.jdbc.driver.OracleDriver");
 Connection con = DriverManager.getConnection("jdbc:oracle:thin:seminar_hall_booking/seminar@localhost:1521:xe");
 Statement stmt = con.createStatement();
 ResultSet rs = stmt.executeQuery("select staff_name , period from bookings b inner join staff_details s on s.staff_id = b.staff_id where dt = '"+parsedDate+"' and hall_number in (select hall_number from seminar_hall where branch='"+hall+"') order by period");
-int count=1,i=1;
-Integer period;
-HashMap <Integer,String> map = new HashMap<Integer,String>();
-String name;
-out.println("<td> Status </td>");
+int count=1;
+int period,i=1;
+String s="<td><br />Status</td>";
 while(rs.next()){
 	period = rs.getInt(2);
-	map.put(period,rs.getString(1));
-	for(;i<=8;i++)
-	{
+	for(;i<=8;i++) {
 		if(i==period)
 		{
-			out.println("<td>"+map.get(period)+"</td>");
+			s+="<td>Booked by "+rs.getString(1)+"</td>";
 			i++;
 			break;
 		}
 		else
-			out.println("<td>Available</td>");
+			s+="<td class=text><input TYPE=checkbox id=reg /><br />Book now</td>";
 	}
 }
-for(;i<=8;i++)
-	out.println("<td>Available</td>");
+for(;i<=8;i++){
+	s+="<td class=text><input TYPE=checkbox id=reg /> <br />Book now</td>";
+}
+out.println(s);
 %>
 
 
