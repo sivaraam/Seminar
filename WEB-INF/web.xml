@@ -28,11 +28,11 @@
      Welcome to Tomcat
   </description>
   <servlet>
-  <servlet-name>seminar</servlet-name>
-  <jsp-file>/seminar.jsp</jsp-file>
+    <servlet-name>SeminarHallBooking</servlet-name>
+    <jsp-file>/jsp/seminar.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-  <servlet-name>seminar</servlet-name>
-  <url-pattern>/seminar</url-pattern>
+    <servlet-name>SeminarHallBooking</servlet-name>
+    <url-pattern>/book-hall</url-pattern>
   </servlet-mapping>
 </web-app>
