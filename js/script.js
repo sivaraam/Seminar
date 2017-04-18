@@ -30,14 +30,13 @@ function registerEvents() {
 }
 
 function loadDates() {
-    var i,text;
-	text = "";
+	date_buttons_html = "";
 	for (i = 1; i <= 5; i++) {
     day_index = (newDate.getDay() + (i-1)) % 7;
     curr_date = (newDate.getDate() + (i-1)) + " " + day[day_index];
-		text += "<input type=\"radio\" name=\"date\" id=\"day"+i+"\" class=\"\" value = \""+curr_date+"\">"+curr_date+"</input>";
+		date_buttons_html += "<input type=\"radio\" name=\"date\" id=\"day"+i+"\" class=\"\" value = \""+curr_date+"\">"+curr_date+"</input>";
 	}
-	document.getElementById("date-buttons").innerHTML = text;
+	document.getElementById("date-buttons").innerHTML = date_buttons_html;
 }
 
 function parseDate(date) {

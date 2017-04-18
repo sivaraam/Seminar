@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	</head>
 
-  <body onload = "loadDates()">
+  <body onload = "loadDates(), registerEvents()">
 		<header>
 			<figure>
 				<img src="images/header01.jpg" alt="saralogo" />
@@ -36,7 +36,7 @@
 						<label class="item-description" for="halls"> Hall </label>
 						<div class="item">
 							<select id="halls" name="hall">
-								<<option value selected></option>
+								<option value selected></option>
 								<option value="cse">  CSE </option>
 								<option value="ece">  ECE </option>
 								<option value="eee">  EEE </option>
