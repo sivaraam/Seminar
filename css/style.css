@@ -2,17 +2,16 @@
 	font-family: Helvetica;
 }
 
-h2 {
+header {
 	text-align:center
 }
 
 form {
 	margin: 0px auto;
 	padding:10px;
-	width:65%;
+	padding-left:10px;
+	width:70%;
 }
-
-
 table {
 		margin-top:40px;
 		width:auto;
@@ -35,19 +34,24 @@ table td, table th {
 .text {
 	color:blue;
 }
-.title {
+div.form-item {
 	text-align: left;
 	margin-top:20px;
 	padding-bottom:10px;
 }
 
-.content {
-	text-align:center;
-	margin-left:40px;
+div.submit {
+		text-align: center;
 }
 
-.button {
+span.form-sub-item {
+		padding-bottom: 0px;
+		padding-left: 10px;
+}
+
+input.date-button {
 	background-color: #FFFFFF;
+	font-size: 16px;
 	border: none;
 	width: 20px;
 	color: #679CCC;
@@ -55,25 +59,25 @@ table td, table th {
 	text-align:leftwards;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 16px;
 	margin: 4px 2px;
 	cursor: pointer;
 	border-radius:5px;
 	white-space:normal;
 }
 
-.button:hover {
+input.date-button:hover {
 	background-color:lightgrey;
 }
 
-.submit {
+table caption {
+		text-align: center;
+		margin-bottom: 2%;
+}
+
+input.form-submit-button {
 	text-align:center;
 	font-size: 16px ;
 	font-weight:200;
 	margin-top:10px;
 	padding:5px
-}
-
-.logo {
-    text-align: center
 }

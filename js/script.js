@@ -13,26 +13,13 @@ function callJSP()
 {
 	var value = $(document.getElementById(curr_highlight)).val();
 	var hallValue = $("#hall").val();
-	$.post("seminar.jsp", { dat : value.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue } , 
+	$.post("jsp/seminar.jsp", { dat : value.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue } , 
 	function(data,status){
 		document.getElementById("tab").rows[1].innerHTML=data;
 		$("table").show();
 	});	
 }
-/*function callJSP()
-{
-	var value = $(document.getElementById(curr_highlight)).val();
-	var hallValue = $("#hall").val();
-	$.ajax({
-		type: "POST",
-        url: "seminar",
-        data: { dat : value.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue },
-        success:function(result){
-            document.getElementById("tab").rows[1].innerHTML=data;
-		$("table").show();
-		}
-	});	
-}*/
+
 function call(e)
 {
 	callJSP();
@@ -51,9 +38,9 @@ function loadDates() {
     var i,text;
 	text = "";
 	for (i = 1; i <= 5; i++) {
-		text += "<input type=\"button\" id=\"day"+i+"\" class=\"content button\" value = \""+parseDate((newDate.getDate()+i-1))+" "+day[(newDate.getDay()+(i-1))%7]+"\"/>";
+		text += "<input type=\"button\" id=\"day"+i+"\" class=\"form-item date-button\" value = \""+(newDate.getDate()+i-1)+" "+day[(newDate.getDay()+(i-1))%7]+"\"/>";
 	}
-	document.getElementById("date").innerHTML = text;
+	document.getElementById("date-buttons").innerHTML = text;
 	registerEvents();
 }
 function parseDate(date)
