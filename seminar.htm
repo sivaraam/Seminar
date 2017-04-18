@@ -4,6 +4,8 @@
 		<title> Seminar Hall Booking </title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script type="text/javascript" src="script.js"> </script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+          
 	</head>
 
   <body onload = "loadDates()">
@@ -31,8 +33,9 @@
 					<option value="mba">  MBA </option>
 				</select>
 			</div>
-			<table>
+			<table id="tab">
 				<tr>
+					<th> Hours </th>
 					<th>  I </th>
 					<th> II </th>
 					<th> III </th>
@@ -43,14 +46,15 @@
 					<th> VIII </th>
 				</tr>
 				<tr>
-					<td> Available </td>
-					<td> Available </td>
-					<td> Available </td>
-					<td> Available </td>
-					<td> Available </td>
-					<td> Available </td>
-					<td> Available </td>
-					<td> Available </td>
+					<!--th> Status </th>
+					<td id="p1"> Available </td>
+					<td id="p2"> Available </td>
+					<td id="p3"> Available </td>
+					<td id="p4"> Available </td>
+					<td id="p5"> Available </td>
+					<td id="p6"> Available </td>
+					<td id="p7"> Available </td>
+					<td id="p8"> Available </td-->
 				</tr>
 			</table>
 		<div class = "submit">
