@@ -3,13 +3,6 @@ var  month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov",
 var day = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 var newDate = new Date();
 
-/*function highlight(e) {
-	document.getElementById(curr_highlight).setAttribute("style","background-color:none");
-	e.target.setAttribute( "style", "background-color:lightgrey" );
-	curr_highlight = e.target.getAttribute("id");
-	callJSP();
-}*/
-
 function callJSP() {
 	var value = $(document.getElementById(curr_highlight)).val();
 	var hallValue = $("#halls").val();
