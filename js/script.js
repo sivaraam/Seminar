@@ -9,42 +9,37 @@ function highlight(e)
 	curr_highlight = e.target.getAttribute("id");
 	callJSP();
 }
-function callJSP()
-{
+
+function callJSP() {
 	var value = $(document.getElementById(curr_highlight)).val();
 	var hallValue = $("#hall").val();
-	$.post("jsp/seminar.jsp", { dat : value.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue } , 
+	$.post("jsp/seminar.jsp", { dat : value.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue } ,
 	function(data,status){
-		document.getElementById("tab").rows[1].innerHTML=data;
+		document.getElementById("status-table").rows[1].innerHTML=data;
 		$("table").show();
-	});	
+	});
 }
 
-function call(e)
-{
+function call(e) {
 	callJSP();
 }
-function registerEvents()
-{
-	for ( var number = 1; number <= 5; number += 1 )
-	{
-		document.getElementById("day"+number).addEventListener("click",highlight,false);
-	}
-	document.getElementById("day1").setAttribute("style","background-color:lightgrey");
+
+function registerEvents() {
 	document.getElementById("hall").addEventListener("change",call,false);
-	$("table").hide();	
+	$("table").hide();
 }
+
 function loadDates() {
-    var i,text;
-	text = "";
+	date_buttons_html = "";
 	for (i = 1; i <= 5; i++) {
-		text += "<input type=\"button\" id=\"day"+i+"\" class=\"form-item date-button\" value = \""+(newDate.getDate()+i-1)+" "+day[(newDate.getDay()+(i-1))%7]+"\"/>";
+    day_index = (newDate.getDay() + (i-1)) % 7;
+    curr_date = (newDate.getDate() + (i-1)) + " " + day[day_index];
+		date_buttons_html += "<input type=\"radio\" name=\"date\" id=\"day"+i+"\" class=\"\" value = \""+curr_date+"\">"+curr_date+"</input>";
 	}
-	document.getElementById("date-buttons").innerHTML = text;
-	registerEvents();
+	document.getElementById("date-buttons").innerHTML = date_buttons_html;
 }
-function parseDate(date)
-{
+
+function parseDate(date) {
 	if(date < 10)
 	{
 		date = '0'+date;
