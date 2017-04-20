@@ -16,14 +16,9 @@
 #date-radio .css-button label {
   display: block;
   position: relative;
-  font-size: 1.35em;
   padding: 0.25em 0.25em 0.25em 3em;
   cursor: pointer;
   -webkit-transition: all 0.25s linear;
-}
-
-#date-radio .css-button:hover label {
-  color: #FFFFFF;
 }
 
 #date-radio .css-button .check {
@@ -41,7 +36,7 @@
 }
 
 #date-radio .css-button:hover .check {
-  border: 0.4em solid #FFFFFF;
+  border: 0.4em solid;
 }
 
 #date-radio .css-button .check .check-inside {
@@ -53,13 +48,5 @@
 }
 
 #date-radio .css-button input[type=radio]:checked ~ .check {
-  border: 0.4em solid #0DFF92;
-}
-
-#date-radio .css-button input[type=radio]:checked ~ .check .check-inside {
-  background: #0DFF92;
-}
-
-#date-radio .css-button input[type=radio]:checked{
-  color: #0DFF92;
+  border: 0.4em solid;
 }
