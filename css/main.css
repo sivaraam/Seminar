@@ -289,7 +289,7 @@ td, th {
        Custom Media Query rules
       ========================= */
     .header-container {
-      border-bottom-width: 0.2em;
+      border-bottom-width: 0.13em;
     }
     .column {
         float: left;
