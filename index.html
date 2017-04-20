@@ -44,12 +44,20 @@
                         Date
                       </label>
                     </span>
-                    <span class="item" id="date-buttons">
+                    <span class="item" id="date-chooser">
                       <!--
                         Date buttons to be loaded by JS on page load
                         Mobile : select
                         Higher resolution devoces : radio button
                       -->
+                      <div id="date-select">
+                        <select id="dates" name="date">
+                          <option value="20">20 Thu</option>
+                          <option value="21">21 Fri</option>
+                          <option value="22">22 Sat</option>
+                          <option value="23">23 Sun</option>
+                        </select>
+                      </div>
                     </span> <!-- item -->
                   </div> <!-- .form-item -->
                 </div>  <!-- form-item-container -->
@@ -62,15 +70,15 @@
                       </label>
                     </span>
                     <span class="item">
-                    <select id="halls" name="hall">
-                      <option value="cse">  CSE </option>
-                      <option value="ece">  ECE </option>
-                      <option value="eee">  EEE </option>
-                      <option value="it">   IT </option>
-                      <option value="ice">  ICE </option>
-                      <option value="mech"> MECH </option>
-                      <option value="mba">  MBA </option>
-                    </select>
+                      <select id="halls" name="hall">
+                        <option value="cse">  CSE </option>
+                        <option value="ece">  ECE </option>
+                        <option value="eee">  EEE </option>
+                        <option value="it">   IT </option>
+                        <option value="ice">  ICE </option>
+                        <option value="mech"> MECH </option>
+                        <option value="mba">  MBA </option>
+                      </select>
                     </span> <!-- item -->
                   </div> <!-- .form-item -->
                 </div>  <!-- .form-item-container -->
