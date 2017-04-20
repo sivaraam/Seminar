@@ -57,7 +57,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px Helvetica, "Helvetica Neue", Arial;
 }
 
 .wrapper {
@@ -364,7 +364,7 @@ td, th {
 
 .visuallyhidden {
     border: 0;
-    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
     height: 1px;
     margin: -1px;
     overflow: hidden;
