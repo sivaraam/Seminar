@@ -8,12 +8,13 @@ html, body {
 
 .header-container {
   background-color: #151515;
+	border-bottom-color: white;
   color: white;
 }
 
 .main-container {
-  border-color: #ccc;
-  color: #aaa;
+  border-color: #bbb;
+  color: #eee;
 }
 
 .shadow {
@@ -23,6 +24,14 @@ html, body {
 .item-description {
   font-weight: bold;
   font-size: 125%;
+}
+
+.item table {
+		color: #eee;
+}
+
+.form-item-container .button {
+		color: black;
 }
 
 select {

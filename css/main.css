@@ -135,11 +135,24 @@ html, body {
   text-align:center;
 }
 
+.header-container {
+  border-bottom:  1px solid;
+}
+
 .main-container {
   text-align: left;
   padding-top: 1em;
+  margin-right: 1em;
 }
 
+.main {
+  border: 2px solid;
+  padding: 1em 0.5em;
+}
+
+.form-item-container {
+  padding-bottom: 1em;
+}
 /* Hide the logo for small screens */
 #logo {
   display: none;
@@ -167,9 +180,11 @@ td, th {
 
 [id^=day-container] {
   display: inline-block;
-
 }
 
+.form-item-container .button {
+  text-align: center;
+}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -209,6 +224,11 @@ td, th {
     }
 }
 
+@media only screen and (min-width: 500px) {   /* Custom Media Query */
+  .main {
+    padding: 1em 1em;
+  }
+}
 @media only screen and (min-width: 768px) {
 
 /* ====================
@@ -250,7 +270,6 @@ td, th {
     }
 
     .form-container {
-
       max-width: 100%;
     }
 
@@ -260,19 +279,30 @@ td, th {
       box-sizing: border-box;
     }
 
-    /* ===================
-       Custom Media Query
-      ==================== */
-      .column {
-          float: left;
-          width: 50%;
+    /* ========================
+       Custom Media Query rules
+      ========================= */
+    .column {
+        float: left;
+        width: 50%;
+    }
 
-      }
+    .main {
+      padding: 1em 1.25em;
+    }
+
+    .title {
+      float: none;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     #logo {
       display: block;
+    }
+
+    td, th {
+      padding: 0.5em;
     }
 }
 
