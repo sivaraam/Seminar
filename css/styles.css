@@ -1,6 +1,7 @@
 /* ==========================================================================
   CSS Rules required to style the content like the font-color, background etc.
    ========================================================================== */
+@import url('http://fonts.googleapis.com/css?family=Lato');
 html, body {
 	font-family: 'Lato', sans-serif;
   background-color: #222222;
