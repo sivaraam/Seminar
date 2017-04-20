@@ -158,6 +158,11 @@ html, body {
   display: none;
 }
 
+/* Hide radio date selector for small screens */
+#date-radio {
+  display: none;
+}
+
 .item-description {
   padding-bottom: 0.3em;
   display: block;
@@ -225,10 +230,11 @@ td, th {
 }
 
 @media only screen and (min-width: 500px) {   /* Custom Media Query */
-  .main {
+  .main {     /*Increase padding of form container for medium-sized screen */
     padding: 1em 1em;
   }
 }
+
 @media only screen and (min-width: 768px) {
 
 /* ====================
@@ -287,6 +293,7 @@ td, th {
         width: 50%;
     }
 
+    /* Increase padding in form container further */
     .main {
       padding: 1em 1.25em;
     }
@@ -294,9 +301,34 @@ td, th {
     .title {
       float: none;
     }
+
+    /* Display radio buttons to select dates in big screens */
+    #date-select {
+      display: none;
+    }
+
+    #date-radio {
+      display: block;
+    }
+
+    .css-button {
+      font-size: 85%;
+    }
+
+    /* Float buttons so that they are spread out */
+    .button-col {
+      float: left;
+      width: 20%;
+    }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 900px) { /*Custom media rule */
+  .css-button {
+    font-size: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) { /*Custom media rule */
     #logo {
       display: block;
     }
@@ -316,8 +348,6 @@ td, th {
         width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;
     }
-
-
 }
 
 /* ==========================================================================
