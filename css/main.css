@@ -157,12 +157,12 @@ html, body {
 table {
   border:1px solid;
   border-collapse: collapse;
+  width: 100%
 }
 
-table td, table th {
+td, th {
   border: 1px solid;
   text-align: center;
-  padding: 0.25em;
 }
 
 [id^=day-container] {
@@ -259,6 +259,15 @@ table td, table th {
       padding: 2% 0 0 5%;
       box-sizing: border-box;
     }
+
+    /* ===================
+       Custom Media Query
+      ==================== */
+      .column {
+          float: left;
+          width: 50%;
+
+      }
 }
 
 @media only screen and (min-width: 1024px) {

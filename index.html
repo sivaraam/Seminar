@@ -36,36 +36,95 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-              <form class="" action="book-hall" method="post">
-                <div class="fom-item-container">
+              <form action="book-hall" method="post">
+                <div class="form-item-container">
                   <div class="form-item">
                     <span class="item-description">
-
+                      <label for="date-buttons">
+                        Date
+                      </label>
                     </span>
-                    <span clas="item">
-
-                    </span>
-                  </div>
-                </div>
+                    <span class="item" id="date-buttons">
+                      <!--
+                        Date buttons to be loaded by JS on page load
+                        Mobile : select
+                        Higher resolution devoces : radio button
+                      -->
+                    </span> <!-- item -->
+                  </div> <!-- .form-item -->
+                </div>  <!-- form-item-container -->
 
                 <div class="form-item-container">
                   <div class="form-item">
                     <span class="item-description">
-
+                      <label for="halls">
+                        Hall
+                      </label>
                     </span>
-                    <span clas="item">
-
-                    </span>
-                  </div>
-                </div>
+                    <span class="item">
+                    <select id="halls" name="hall">
+                      <option value="cse">  CSE </option>
+                      <option value="ece">  ECE </option>
+                      <option value="eee">  EEE </option>
+                      <option value="it">   IT </option>
+                      <option value="ice">  ICE </option>
+                      <option value="mech"> MECH </option>
+                      <option value="mba">  MBA </option>
+                    </select>
+                    </span> <!-- item -->
+                  </div> <!-- .form-item -->
+                </div>  <!-- .form-item-container -->
 
                 <div class="form-item-container">
                   <div class="form-item">
                     <span class="item-description">
-
+                      <label for="staus-table">
+                        Seminar Hall Status
+                      </label>
                     </span>
-                    <span clas="item">
+                    <span class="item clearfix">
+                      <!-- tbody of 2 tables are to be filled in using JS -->
+                      <div class="column">
+                        <table id="status-table-1">
+                          <thead>
+                            <th>  I </th>
+                            <th> II </th>
+                            <th> III </th>
+                            <th> IV </th>
+                          </thead>
+                          <tbody>
+                            <td> Available </td>
+                            <td> Available </td>
+                            <td> Available </td>
+                            <td> Available </td>
+                          </tbody>
+                        </table>
+                      </div> <!-- .column -->
 
+                      <div class="column">
+                        <table id="status-table-2">
+                          <thead>
+                            <th> V </th>
+                            <th> VI </th>
+                            <th> VII </th>
+                            <th> VIII </th>
+                          </thead>
+                          <tbody>
+                            <td> Available </td>
+                            <td> Available </td>
+                            <td> Available </td>
+                            <td> Available </td>
+                          </tbody>
+                        </table>
+                      </div> <!-- column -->
+                    </span> <!-- item -->
+                  </div> <!-- .form-item -->
+                </div>  <!-- form-item-container -->
+
+                <div class="form-item-container">
+                  <div class="form-item">
+                    <span class="item">
+                      <input type="submit" name="submit" value="Book" />
                     </span>
                   </div>
                 </div>
