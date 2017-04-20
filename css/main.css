@@ -136,7 +136,7 @@ html, body {
 }
 
 .header-container {
-  border-bottom:  1px solid;
+  border-bottom:  0.1em solid;
 }
 
 .main-container {
@@ -288,6 +288,9 @@ td, th {
     /* ========================
        Custom Media Query rules
       ========================= */
+    .header-container {
+      border-bottom-width: 0.2em;
+    }
     .column {
         float: left;
         width: 50%;
