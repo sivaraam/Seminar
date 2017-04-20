@@ -1,0 +1,38 @@
+/* ==========================================================================
+  CSS Rules required to style the content like the font-color, background etc.
+   ========================================================================== */
+html, body {
+	font-family: 'Lato', sans-serif;
+  background-color: #222222;
+}
+
+.header-container {
+  background-color: #151515;
+  color: white;
+}
+
+.form-wrapper {
+  border-color: #ccc;
+  color: #aaa;
+}
+
+.shadow {
+  box-shadow: 0 .25em 0.7em #333;
+}
+
+.item-description {
+  font-weight: bold;
+  font-size: 125%;
+}
+
+select {
+  color: black;
+}
+
+table {
+  border-color: #ccc;
+}
+
+table th, table tr {
+  border-color:  #ccc;
+}
