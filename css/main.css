@@ -190,6 +190,7 @@ td, th {
 .form-item-container .button {
   text-align: center;
 }
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -227,12 +228,6 @@ td, th {
     .oldie nav a {
         margin: 0 0.7%;
     }
-}
-
-@media only screen and (min-width: 500px) {   /* Custom Media Query */
-  .main {     /*Increase padding of form container for medium-sized screen */
-    padding: 1em 1em;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -285,60 +280,6 @@ td, th {
       box-sizing: border-box;
     }
 
-    /* ========================
-       Custom Media Query rules
-      ========================= */
-    .header-container {
-      border-bottom-width: 0.13em;
-    }
-    .column {
-        float: left;
-        width: 50%;
-    }
-
-    /* Increase padding in form container further */
-    .main {
-      padding: 1em 1.25em;
-    }
-
-    .title {
-      float: none;
-    }
-
-    /* Display radio buttons to select dates in big screens */
-    #date-select {
-      display: none;
-    }
-
-    #date-radio {
-      display: block;
-    }
-
-    .css-button {
-      font-size: 85%;
-    }
-
-    /* Float buttons so that they are spread out */
-    .button-col {
-      float: left;
-      width: 20%;
-    }
-}
-
-@media only screen and (min-width: 900px) { /*Custom media rule */
-  .css-button {
-    font-size: 100%;
-  }
-}
-
-@media only screen and (min-width: 1024px) { /*Custom media rule */
-    #logo {
-      display: block;
-    }
-
-    td, th {
-      padding: 0.5em;
-    }
 }
 
 @media only screen and (min-width: 1140px) {
@@ -459,4 +400,67 @@ td, th {
     h3 {
         page-break-after: avoid;
     }
+}
+
+/* ========================================================
+   Custom Media Query rules that may override default rules
+  ========================================================= */
+@media only screen and (min-width: 768px) {
+  .header-container {
+    border-bottom-width: 0.13em;
+  }
+  .column {
+      float: left;
+      width: 50%;
+  }
+
+  /* Increase padding in form container further */
+  .main {
+    padding: 1em 1.25em;
+  }
+
+  .title {
+    float: none;
+  }
+
+  /* Display radio buttons to select dates in big screens */
+  #date-select {
+    display: none;
+  }
+
+  #date-radio {
+    display: block;
+  }
+
+  .css-button {
+    font-size: 85%;
+  }
+
+  /* Float buttons so that they are spread out evenly */
+  .date-button-col {
+    float: left;
+    width: 20%;
+  }
+
+}
+
+@media only screen and (min-width: 900px) {
+  .css-button {
+    font-size: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+    #logo {
+      display: block;
+    }
+
+    td, th {
+      padding: 0.5em;
+    }
+}
+@media only screen and (min-width: 500px) {   /* Custom Media Query */
+  .main {     /*Increase padding of form container for medium-sized screen */
+    padding: 1em 1em;
+  }
 }
