@@ -9,18 +9,18 @@
   color: #fff;
 }
 
-.css-radio .css-button:hover .check {
+.css-radio .css-button .css-button-label-container {
+  border-color: transparent;
+}
+
+.css-radio .css-button:hover .css-button-label-container {
   border-color: #fff;
 }
 
-.css-radio .css-button input[type=radio]:checked ~ .check {
+.css-radio .css-button input[type=radio]:checked ~ .css-button-label-container {
   border-color: #0DFF92;
 }
 
-.css-radio .css-button input[type=radio]:checked ~ .check .check-inside {
-  background: #0DFF92;
-}
-
-.css-radio .css-button input[type=radio]:checked{
+.css-radio .css-button input[type=radio]:checked ~ .css-button-label-container label{
   color: #0DFF92;
 }
