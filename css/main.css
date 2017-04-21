@@ -163,6 +163,10 @@ html, body {
   display: none;
 }
 
+/* Hide radio dept selector for small screens */
+#halls-radio {
+  display: none;
+}
 .item-description {
   padding-bottom: 0.3em;
   display: block;
@@ -432,6 +436,14 @@ td, th {
     display: block;
   }
 
+  #halls-select {
+    display: none;
+  }
+
+  #halls-radio {
+    display: block;
+  }
+
   .css-button {
     font-size: 85%;
   }
@@ -442,6 +454,10 @@ td, th {
     width: 20%;
   }
 
+  .halls-button-col {
+    float: left;
+    width: 14%;
+  }
 }
 
 @media only screen and (min-width: 900px) {
