@@ -1,0 +1,26 @@
+/* ==========================================================================
+  CSS Rules required for a styling the sleek radio button
+   ========================================================================== */
+.css-radio .css-button label {
+  font-size: 1.35em;
+}
+
+.css-radio .css-button:hover label {
+  color: #fff;
+}
+
+.css-radio .css-button:hover .check {
+  border-color: #fff;
+}
+
+.css-radio .css-button input[type=radio]:checked ~ .check {
+  border-color: #0DFF92;
+}
+
+.css-radio .css-button input[type=radio]:checked ~ .check .check-inside {
+  background: #0DFF92;
+}
+
+.css-radio .css-button input[type=radio]:checked{
+  color: #0DFF92;
+}
