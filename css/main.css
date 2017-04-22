@@ -209,7 +209,7 @@ input[type=submit]
     text-decoration: none;
     display: inline-block;
     font-size: 1.35em;
-    margin: 4px 2px;
+    margin: 0.25em 0.125em;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
@@ -221,12 +221,12 @@ input[type=submit]
 input[type=checkbox]
 {
     border: 0.125em ;
-    border-radius:0.25empx;
+    border-radius:0.25em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 1.35em;
-    margin:0px;
+    margin:0em;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
@@ -241,7 +241,7 @@ select#subjects
 {
    border: 0.1em solid;
    border-radius: 0.5em;
-   margin-left: 20px;
+   margin-left: 1.25em;
    overflow: hidden;
    padding: 0.3125em 0.625em;
    text-overflow: ellipsis;
