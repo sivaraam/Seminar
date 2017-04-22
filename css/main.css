@@ -143,6 +143,7 @@ html, body {
   text-align: left;
   padding-top: 1em;
   margin-right: 1em;
+  transition: border 0.5s linear;
 }
 
 .main {
@@ -159,17 +160,28 @@ html, body {
 }
 
 /* Hide radio date selector for small screens */
-#date-radio {
+.date-radio-container {
   display: none;
 }
 
 /* Hide radio dept selector for small screens */
-#halls-radio {
+.halls-radio-container {
   display: none;
 }
+
 .item-description {
   padding-bottom: 0.3em;
   display: block;
+}
+
+/* Hide the status table and book button until the user selects
+   a date and hall. Will be made visible through JS*/
+#status-table-container {
+  display: none;
+}
+
+#button-container {
+  display: none;
 }
 
 .item {
@@ -445,19 +457,19 @@ input[type=submit]
   }
 
   /* Display radio buttons to select dates in big screens */
-  #date-select {
+  .date-select-container {
     display: none;
   }
 
-  #date-radio {
+  .date-radio-container {
     display: block;
   }
 
-  #halls-select {
+  .halls-select-container {
     display: none;
   }
 
-  #halls-radio {
+  .halls-radio-container {
     display: block;
   }
 

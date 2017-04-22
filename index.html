@@ -10,11 +10,11 @@
         <meta name="description" content="Seminar hall booking interface for college">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/light-styles.css">
-        <link rel="stylesheet" href="css/radio-button.css">
-        <link rel="stylesheet" href="css/radio-button-light-style.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/light-styles.css">
+        <link rel="stylesheet" type="text/css" href="css/radio-button.css">
+        <link rel="stylesheet" type="text/css" href="css/radio-button-light-style.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
@@ -41,14 +41,16 @@
                         Date
                       </label>
                     </span>
-                    <div class="item" id="date-chooser">
+                    <div class="item">
                       <!--
-                        Date buttons to be loaded by JS on page load
+                        Value attribute of select and input elements
+                        to be updated by JS
                         Mobile : select
-                        Higher resolution devoces : radio button
+                        Higher resolution devices : (radio) button
                       -->
-                      <div id="date-select">
-                        <select id="dates" name="date">
+                      <div class="date-select-container">
+                        <select id="date-select" name="date-select">
+                          <option value="select"> Select </option>
                           <option value="20">20 Thu</option>
                           <option value="21">21 Fri</option>
                           <option value="22">22 Sat</option>
@@ -56,9 +58,9 @@
                         </select>
                       </div>
 
-                      <div id="date-radio" class="css-radio clearfix">
+                      <div class="css-radio date-radio-container clearfix">
                         <div class="css-button date-button-col">
-                          <input type="radio" name="date" id="date-1">
+                          <input type="radio" name="date-radio" id="date-1" value="">
                           <div class="css-button-label-container">
                             <label id="date-label-1" for="date-1">
                               20 Thu
@@ -67,7 +69,7 @@
                         </div>
 
                         <div class="css-button date-button-col">
-                          <input type="radio" name="date" id="date-2">
+                          <input type="radio" name="date-radio" id="date-2" value="">
                           <div class="css-button-label-container">
                             <label id="date-label-2" for="date-2">
                               21 Fri
@@ -76,7 +78,7 @@
                         </div>
 
                         <div class="css-button date-button-col">
-                          <input type="radio" name="date" id="date-3">
+                          <input type="radio" name="date-radio" id="date-3" value="">
                           <div class="css-button-label-container">
                             <label id="date-label-3" for="date-3">
                               22 Sat
@@ -86,7 +88,7 @@
 
 
                         <div class="css-button date-button-col">
-                          <input type="radio" name="date" id="date-4">
+                          <input type="radio" name="date-radio" id="date-4" value="">
                           <div class="css-button-label-container">
                             <label id="date-label-4" for="date-4">
                               23 Sun
@@ -95,7 +97,7 @@
                         </div>
 
                         <div class="css-button date-button-col">
-                          <input type="radio" name="date" id="date-5">
+                          <input type="radio" name="date-radio" id="date-5" value="">
                           <div class="css-button-label-container">
                             <label id="date-label-5" for="date-5">
                               24 Mon
@@ -116,8 +118,15 @@
                       </label>
                     </span>
                     <div class="item">
-                      <div id="halls-select">
-                        <select id="halls" name="hall">
+                      <!--
+                        Value attribute of select and input elements
+                        to be updated by JS
+                        Mobile : select
+                        Higher resolution devices : (radio) button
+                      -->
+                      <div class="halls-select-container">
+                        <select id="halls-select" name="hall-select">
+                          <option value="select">Select</option>
                           <option value="cse">  CSE </option>
                           <option value="ece">  ECE </option>
                           <option value="eee">  EEE </option>
@@ -128,9 +137,9 @@
                         </select>
                       </div>
 
-                      <div id="halls-radio" class="css-radio clearfix">
+                      <div id="halls-radio-container" class="css-radio clearfix">
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall" id="hall-1">
+                          <input type="radio" name="hall-radio" id="hall-1">
                           <div class="css-button-label-container">
                             <label id="hall-label-1" for="hall-1">
                               CSE
@@ -139,7 +148,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall" id="hall-2">
+                          <input type="radio" name="hall-radio" id="hall-2">
                           <div class="css-button-label-container">
                             <label id="hall-label-2" for="hall-2">
                               ECE
@@ -148,7 +157,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall" id="hall-3">
+                          <input type="radio" name="hall-radio" id="hall-3">
                           <div class="css-button-label-container">
                             <label id="hall-label-3" for="hall-3">
                               EEE
@@ -158,7 +167,7 @@
 
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall" id="hall-4">
+                          <input type="radio" name="hall-radio" id="hall-4">
                           <div class="css-button-label-container">
                             <label id="hall-label-4" for="hall-4">
                               IT
@@ -167,7 +176,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall" id="hall-5">
+                          <input type="radio" name="hall-radio" id="hall-5">
                           <div class="css-button-label-container">
                             <label id="hall-label-5" for="hall-5">
                               ICE
@@ -176,7 +185,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall" id="hall-6">
+                          <input type="radio" name="hall-radio" id="hall-6">
                           <div class="css-button-label-container">
                             <label id="hall-label-6" for="hall-6">
                               MECH
@@ -185,7 +194,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall" id="hall-7">
+                          <input type="radio" name="hall-radio" id="hall-7">
                           <div class="css-button-label-container">
                             <label id="hall-label-7" for="hall-7">
                               MBA
@@ -198,7 +207,7 @@
                   </div> <!-- .form-item -->
                 </div>  <!-- .form-item-container -->
 
-                <div class="form-item-container">
+                <div id="status-table-container" class="form-item-container">
                   <div class="form-item">
                     <span class="item-description">
                       <label>
@@ -210,16 +219,20 @@
                       <div class="column">
                         <table id="status-table-1">
                           <thead>
-                            <th>  I </th>
-                            <th> II </th>
-                            <th> III </th>
-                            <th> IV </th>
+                            <tr>
+                              <th> I </th>
+                              <th> II </th>
+                              <th> III </th>
+                              <th> IV </th>
+                            </tr>
                           </thead>
                           <tbody>
-                            <td> Available </td>
-                            <td> Available </td>
-                            <td> Available </td>
-                            <td> Available </td>
+                            <tr>
+                              <td> Available </td>
+                              <td> Available </td>
+                              <td> Available </td>
+                              <td> Available </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div> <!-- .column -->
@@ -227,16 +240,20 @@
                       <div class="column">
                         <table id="status-table-2">
                           <thead>
-                            <th> V </th>
-                            <th> VI </th>
-                            <th> VII </th>
-                            <th> VIII </th>
+                            <tr>
+                              <th> V </th>
+                              <th> VI </th>
+                              <th> VII </th>
+                              <th> VIII </th>
+                            </tr>
                           </thead>
-                          <tbody>
-                            <td> Available </td>
-                            <td> Available </td>
-                            <td> Available </td>
-                            <td> Available </td>
+                        <tbody>
+                            <tr>
+                              <td> Available </td>
+                              <td> Available </td>
+                              <td> Available </td>
+                              <td> Available </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div> <!-- column -->
@@ -244,10 +261,10 @@
                   </div> <!-- .form-item -->
                 </div>  <!-- form-item-container -->
 
-                <div class="form-item-container">
+                <div id="button-container" class="form-item-container">
                   <div class="form-item button">
                     <span class="item">
-                      <input type="submit" name="submit" value="Book" />
+                      <input id="book" type="submit" name="submit" value="Book" />
                     </span>
                   </div>
                 </div>

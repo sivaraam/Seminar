@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8" />
+		<link rel="stylesheet" href="css/style.css">
+	  <title> Seminar Hall Booking </title>
+	  <script type="text/javascript" src="js/script.js"> </script>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	</head>
+
+  <body onload = "loadDates(), registerEvents()">
+		<header>
+			<figure>
+				<img src="images/header01.jpg" alt="saralogo" />
+			</figure>
+			<h1> Seminar Hall Booking </h1>
+		</header>
+
+		<div class="form-container">
+			<form name="hall-booking-form" method="POST" >
+				<div class="form-items-container">
+					<div class="form-item">
+						<label class="item-description" for="date-buttons"> Date </label>
+						<span  class="item" id = "date-buttons">
+						 <!--
+								Date buttons to be loaded by JS on page load
+								The buttons wodiv class="form-items-wrapperd have the format,
+
+									<input type="radio" id="DATE-IDENTIFIER" name="date" value="DATE-VALUE"> DATE-VALUE </input>
+
+							-->
+						</span>
+					</div>
+
+					<div class="form-item">
+						<label class="item-description" for="halls"> Hall </label>
+						<div class="item">
+							<select id="halls" name="hall">
+								<option value="cse">  CSE </option>
+								<option value="ece">  ECE </option>
+								<option value="eee">  EEE </option>
+								<option value="it">   IT </option>
+								<option value="ice">  ICE </option>
+								<option value="mech"> MECH </option>
+								<option value="mba">  MBA </option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-item">
+						<label class="item-description">Seminar Hall Status</label>
+						<div class="item">
+							<table id="status-table">
+								<thead>
+									<tr>
+										<th> Hours </th>
+										<th>  I </th>
+										<th> II </th>
+										<th> III </th>
+										<th> IV </th>
+										<th> V </th>
+										<th> VI </th>
+										<th> VII </th>
+										<th> VIII </th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<!-- To be filled in by JS -->
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="form-item">
+						<input type="button" name="submit" value="Book" id="Book"/>
+					</div>
+				</div>
+			</form>
+		</div>
+  </body>
+</html>
