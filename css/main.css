@@ -184,7 +184,7 @@ table {
 }
 
 td, th {
-  border: 1px solid;
+  border:none;
   text-align: center;
 }
 
@@ -196,20 +196,57 @@ td, th {
   text-align: center;
 }
 
+/*=========================================================================
+  Style for submit button
+=========================================================================*/
 input[type=submit]
 {
-    border: 2px;
-    border-radius:4px;
-    width:250px;
-    padding: 16px 32px;
+    border: 0.125em solid;
+    border-radius:0.25em;
+    width:9.375em;
+    padding: 0.625em 1.25em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 1.35em;
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
+}
+
+/*=========================================================================
+  Style for check boxes within the table
+=========================================================================*/
+input[type=checkbox]
+{
+    border: 0.125em ;
+    border-radius:0.25empx;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.35em;
+    margin:0px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+
+/*=========================================================================
+  Style for Subjects drop down
+=========================================================================*/
+select#subjects
+{
+   border: 0.1em solid;
+   border-radius: 0.5em;
+   margin-left: 20px;
+   overflow: hidden;
+   padding: 0.3125em 0.625em;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 18.75em;
 }
 
 /* ==========================================================================
@@ -474,6 +511,9 @@ input[type=submit]
   .halls-button-col {
     float: left;
     width: 14%;
+  }
+  .hour-button-col {
+    float: left;
   }
 }
 

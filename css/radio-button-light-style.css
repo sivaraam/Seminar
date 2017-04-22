@@ -11,16 +11,16 @@
 }
 
 .css-radio .css-button:hover label {
-  color: #FF533D;
+  color: #636B46;
 }
 
 .css-radio .css-button:hover .css-button-label-container {
-  border-color: #FF533D;
+  border-color: #636B46;
 }
 
 .css-radio .css-button input[type=radio]:checked ~ .css-button-label-container {
-  border-color: #FF533D;
-  background-color: #FF533D;
+  border-color: #636B46;
+  background-color: #636B46;
 }
 
 .css-radio .css-button input[type=radio]:checked ~ .css-button-label-container label {

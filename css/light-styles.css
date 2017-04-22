@@ -1,15 +1,15 @@
 /* ==========================================================================
   CSS Rules required to style the content like the font-color, background etc.
-	Light Theme
+	Dark Theme
    ========================================================================== */
 @import url('http://fonts.googleapis.com/css?family=Lato');
 html, body {
 	font-family: 'Lato', sans-serif;
-  background-color: #AB987A;
+  background-color: #E9E7DA;
 }
 
 .header-container {
-  background-color: #0F1626;
+  background-color: #CDA34F;
 	border-bottom-color: white;
   color: white;
 }
@@ -20,12 +20,13 @@ html, body {
 }
 
 .item-description {
+  color:#000;
   font-weight: bold;
   font-size: 125%;
 }
 
 .item table {
-		color: #eee;
+	color: #eee;
 }
 
 .form-item-container .button {
@@ -37,21 +38,48 @@ select {
 }
 
 table {
-  border-color: #E24E42;
+  border:none;
 }
 
 table th, table tr {
-  border-color: #fff;
-  background-color: #0A1612;
+  border:none;	
+  background-color: #E37222;
 }
 
 table td {
-  border-color: #fff;
-  background-color: #1A2930;
+  border:none;
+  background-color: #07889B;
+}
+
+.zeroPadding
+{
+    padding:0em;
 }
 
 input[type=submit]
 {
-    background-color: #031424;
+    border-color: #373F27;
+    background-color: #373F27;
     color: white;
 }
+input[type=submit]:hover
+{
+    background-color: #636B46;
+    color: white;
+}
+
+select#subjects , select#halls
+{
+   border-color: #0F1626;
+   color: #0F1626;
+   font-size: 1.35em;
+   background-color: transparent;
+   background-image: url("../img/Select.png");
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   -webkit-appearance: button;  
+}
+
+
+
+
