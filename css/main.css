@@ -143,11 +143,10 @@ html, body {
   text-align: left;
   padding-top: 1em;
   margin-right: 1em;
-  transition: border 0.5s linear;
 }
 
 .main {
-  border: 2px solid;
+  border:none;
   padding: 1em 0.5em;
 }
 
@@ -160,32 +159,22 @@ html, body {
 }
 
 /* Hide radio date selector for small screens */
-.date-radio-container {
+#date-radio {
   display: none;
 }
 
 /* Hide radio dept selector for small screens */
-.halls-radio-container {
+#halls-radio {
   display: none;
 }
-
 .item-description {
   padding-bottom: 0.3em;
   display: block;
 }
 
-/* Hide the status table and book button until the user selects
-   a date and hall. Will be made visible through JS*/
-#status-table-container {
-  display: none;
-}
-
-#button-container {
-  display: none;
-}
-
 .item {
   padding: 0.25em 0em;
+
 }
 
 table {
@@ -195,7 +184,7 @@ table {
 }
 
 td, th {
-  border: 1px solid;
+  border:none;
   text-align: center;
 }
 
@@ -205,6 +194,59 @@ td, th {
 
 .form-item-container .button {
   text-align: center;
+}
+
+/*=========================================================================
+  Style for submit button
+=========================================================================*/
+input[type=submit]
+{
+    border: 0.125em solid;
+    border-radius:0.25em;
+    width:9.375em;
+    padding: 0.625em 1.25em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.35em;
+    margin: 0.25em 0.125em;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+/*=========================================================================
+  Style for check boxes within the table
+=========================================================================*/
+input[type=checkbox]
+{
+    border: 0.125em ;
+    border-radius:0.25em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.35em;
+    margin:0em;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+
+/*=========================================================================
+  Style for Subjects drop down
+=========================================================================*/
+select#subjects
+{
+   border: 0.1em solid;
+   border-radius: 0.5em;
+   margin-left: 1.25em;
+   overflow: hidden;
+   padding: 0.3125em 0.625em;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 18.75em;
 }
 
 /* ==========================================================================
@@ -440,19 +482,19 @@ td, th {
   }
 
   /* Display radio buttons to select dates in big screens */
-  .date-select-container {
+  #date-select {
     display: none;
   }
 
-  .date-radio-container {
+  #date-radio {
     display: block;
   }
 
-  .halls-select-container {
+  #halls-select {
     display: none;
   }
 
-  .halls-radio-container {
+  #halls-radio {
     display: block;
   }
 
@@ -469,6 +511,9 @@ td, th {
   .halls-button-col {
     float: left;
     width: 14%;
+  }
+  .hour-button-col {
+    float: left;
   }
 }
 

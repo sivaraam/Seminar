@@ -1,12 +1,10 @@
 var curr_highlight = "day1";
 var  month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 var day = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-var hours = [];
-var hallValue;
 var newDate = new Date();
 function callJSP() {
 	var value = $(document.getElementById(curr_highlight)).val();
-	hallValue = $("#halls").val();
+	var hallValue = $("#halls").val();
 	$.post("jsp/seminar.jsp", { dat : value.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue } ,
 	function(data,status){
 		document.getElementById("status-table").rows[1].innerHTML=data;
@@ -17,28 +15,10 @@ function callJSP() {
 function check(){
 	$(':checkbox').change(function () {
     if ($(this).prop("checked")) {
-		hours.push($(this).val());
+        alert($(this).val());
     }
 	});
 }
-function book(e)
- {
-	hallValue = $("#halls").val();
-	var val=$(document.getElementById(curr_highlight)).val();
-	var h=hours.length;
-	if(h==0) {
-		alert("Please select an hour");
-	}
-	else {
-		alert(hours.length);
-		for ( var k = 0 ; k < h ; k++) {
-		$.post("jsp/sem.jsp",{ arr : hours[k],hall:hallValue,dat:val.slice(0,2),mnth:month[newDate.getMonth()],yr: newDate.getFullYear()-2000 },
-			function(data,status) { 
-			alert(data);
-			});
-		}
-	}
- }
 function date_change(e) {
 	curr_highlight = e.target.getAttribute("id");
 	callJSP();
@@ -54,7 +34,6 @@ function registerEvents() {
 	for(var i = 1;i <= 5; i++) {
 		document.getElementById("day"+i).addEventListener("change",date_change,false);
 	}
-	document.getElementById("Book").addEventListener("click",book,false);
 }
 
 function loadDates() {
