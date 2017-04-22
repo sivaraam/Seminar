@@ -49,6 +49,7 @@ function hall_change(e) {
 }
 
 function registerEvents() {
+	
 	$("table").hide();
 	document.getElementById("halls").addEventListener("change",hall_change,false);
 	for(var i = 1;i <= 5; i++) {
