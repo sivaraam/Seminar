@@ -427,7 +427,7 @@ td, th {
   }
   .column {
       float: left;
-      width: 40%;
+      width: 50%;
   }
 
   /* Increase padding in form container further */
