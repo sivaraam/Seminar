@@ -1,0 +1,30 @@
+/* ==========================================================================
+  CSS Rules required for a styling the check box
+   ========================================================================== */
+.css-check .css-button label {
+  color: #FFF;
+}
+
+.css-check .css-button .css-button-label-container {
+  border:none;
+  background-color: #07889B;
+}
+
+.css-check .css-button:hover label {
+  color: #FFF;
+}
+
+.css-check .css-button:hover .css-button-label-container {
+  border:none;
+  background-color:#66B9BF;
+}
+
+.css-check .css-button input[type=checkbox]:checked ~ .css-button-label-container {
+  border:none;
+  background-color: #EEAA78;
+}
+
+.css-check .css-button input[type=checkbox]:checked ~ .css-button-label-container label {
+  color: #fff;
+  content:'Selected';
+}

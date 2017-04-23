@@ -1,0 +1,38 @@
+/* ==========================================================================
+  CSS Rules required for a check box
+   ========================================================================== */
+
+.css-check  .css-button {
+  display: inline-block;
+  position: relative;
+  width:100%;
+  height:100%;
+}
+
+.css-check .css-button input[type=checkbox]{
+  position: absolute;
+  visibility: hidden;
+}
+
+.css-check .css-button label {
+  display: block;
+  padding: 0.25em 0.25em;
+  cursor: pointer;
+  transition: color 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+}
+
+.css-check .css-button .css-button-label-container {
+  border: 0.1em solid;
+  text-align: center;
+  transition: border 0.25s linear; 
+}
+
+.css-check .css-button:hover .css-button-label-container {
+  border: 0.1em solid;
+ 
+}
+
+.css-check .css-button input[type=checkbox]:checked ~ .css-button-label-container {
+  border: 0.1em solid;
+}

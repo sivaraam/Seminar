@@ -213,11 +213,8 @@ table th, table tr , table td{
 input[type=submit]
 {
     border: 0.125em solid;
-    border-radius:0.25em;
     width:5.25em;
     padding: 0.3125em 0.625em;
-    text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 1.35em;
     margin: 0.25em 0.125em;
