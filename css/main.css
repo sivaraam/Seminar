@@ -147,7 +147,6 @@ html, body {
 }
 
 .main {
-  border: none;
   padding: 1em 0.5em;
 }
 
@@ -189,13 +188,13 @@ html, body {
 }
 
 table {
-  border:none;
+  border:1px solid;
   border-collapse: collapse;
   width: 100%
 }
 
 table th, table tr , table td{
-  border:none;
+  border:1px solid;
   text-align: center;
 }
 
