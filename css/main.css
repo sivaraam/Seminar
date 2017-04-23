@@ -481,14 +481,17 @@ td, th {
 @media only screen and (min-width: 1024px) {
     #logo {
       display: block;
+      margin-top: 0;
     }
 
     td, th {
       padding: 0.5em;
     }
 }
-@media only screen and (min-width: 500px) {   /* Custom Media Query */
-  .main {     /*Increase padding of form container for medium-sized screen */
+
+@media only screen and (min-width: 500px) {
+  /*Increase padding of form container for medium-sized screen */
+  .main {
     padding: 1em 1em;
   }
 }
