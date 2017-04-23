@@ -147,7 +147,7 @@ html, body {
 }
 
 .main {
-  border: 2px solid;
+  border: none;
   padding: 1em 0.5em;
 }
 
@@ -177,11 +177,11 @@ html, body {
 /* Hide the status table and book button until the user selects
    a date and hall. Will be made visible through JS*/
 #status-table-container {
-  display: none;
+  //display: none;
 }
 
 #button-container {
-  display: none;
+  //display: none;
 }
 
 .item {
@@ -189,13 +189,13 @@ html, body {
 }
 
 table {
-  border:1px solid;
+  border:none;
   border-collapse: collapse;
   width: 100%
 }
 
-td, th {
-  border: 1px solid;
+table th, table tr , table td{
+  border:none;
   text-align: center;
 }
 
@@ -205,6 +205,25 @@ td, th {
 
 .form-item-container .button {
   text-align: center;
+}
+
+/*===========================================================================
+   Style for submit button
+ ===========================================================================*/
+input[type=submit]
+{
+    border: 0.125em solid;
+    border-radius:0.25em;
+    width:5.25em;
+    padding: 0.3125em 0.625em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.35em;
+    margin: 0.25em 0.125em;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 /* ==========================================================================
