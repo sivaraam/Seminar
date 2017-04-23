@@ -4,23 +4,23 @@
    ========================================================================== */
 @import url('http://fonts.googleapis.com/css?family=Lato');
 html, body {
-	font-family: 'Lato', sans-serif;
-  background-color: #22222;
+	font-family: "source-sans-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #dadbdf;
 }
 
 .header-container {
-  background-color: #151515;
+  background-color: #036;
 	border-bottom-color: white;
-  color: white;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .main-container {
   border-color: #bbb;
-  color: #eee;
+  color:#069;
 }
 
 .item-description {
-  font-weight: bold;
+  //font-weight: bold;
   font-size: 125%;
 }
 
@@ -40,6 +40,37 @@ table {
   border-color: #ccc;
 }
 
-table th, table tr {
-  border-color:  #ccc;
+table th{
+  background-color:  #036;
+}
+
+
+table tr{
+  background-color:  #c69;
+}
+
+input[type=submit]
+{
+    border-color: #ff3b3f;
+    background-color: #ff3b3f;
+    color: white;
+}
+input[type=submit]:hover
+{
+    background-color: #76323f;
+    border-color: #76323f;
+}
+.subject-select-container
+{
+   border-color: #c69;
+}
+.subjectselect
+{
+   color: #c69;
+   font-size: 1.35em;
+   background-color: transparent;
+   background-image: url("../img/Select.png");
+   background-position: 87% center;
+   background-repeat: no-repeat;
+   -webkit-appearance: button;  
 }
