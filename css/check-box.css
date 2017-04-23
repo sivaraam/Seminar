@@ -23,16 +23,15 @@
 }
 
 .css-check .css-button .css-button-label-container {
-  border: 0.1em solid;
+  border:none;
   text-align: center;
   transition: border 0.25s linear; 
 }
 
 .css-check .css-button:hover .css-button-label-container {
-  border: 0.1em solid;
- 
+  border:none;
 }
 
 .css-check .css-button input[type=checkbox]:checked ~ .css-button-label-container {
-  border: 0.1em solid;
+  border:none;
 }
