@@ -28,9 +28,9 @@ function check(){
 		hours.push($(this).val());
     }
 	else {
-		for(var i = 0;i < hours.length;m++) {
-			if($(this).val()==hours[m]) {
-				hours.splice(m,1);
+		for(var i = 0;i < hours.length;i++) {
+			if($(this).val()==hours[i]) {
+				hours.splice(i,1);
 				break;
 			}
 		}
