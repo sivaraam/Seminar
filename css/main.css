@@ -143,10 +143,11 @@ html, body {
   text-align: left;
   padding-top: 1em;
   margin-right: 1em;
+  transition: border 0.5s linear;
 }
 
 .main {
-  border: 2px solid;
+  border: none;
   padding: 1em 0.5em;
 }
 
@@ -159,17 +160,28 @@ html, body {
 }
 
 /* Hide radio date selector for small screens */
-#date-radio {
+.date-radio-container {
   display: none;
 }
 
 /* Hide radio dept selector for small screens */
-#halls-radio {
+.halls-radio-container {
   display: none;
 }
+
 .item-description {
   padding-bottom: 0.3em;
   display: block;
+}
+
+/* Hide the status table and book button until the user selects
+   a date and hall. Will be made visible through JS*/
+#status-table-container {
+  //display: none;
+}
+
+#button-container {
+  //display: none;
 }
 
 .item {
@@ -177,13 +189,13 @@ html, body {
 }
 
 table {
-  border:1px solid;
+  border:none;
   border-collapse: collapse;
   width: 100%
 }
 
-td, th {
-  border: 1px solid;
+table th, table tr , table td{
+  border:none;
   text-align: center;
 }
 
@@ -193,6 +205,22 @@ td, th {
 
 .form-item-container .button {
   text-align: center;
+}
+
+/*===========================================================================
+   Style for submit button
+ ===========================================================================*/
+input[type=submit]
+{
+    border: 0.125em solid;
+    width:5.25em;
+    padding: 0.3125em 0.625em;
+    display: inline-block;
+    font-size: 1.35em;
+    margin: 0.25em 0.125em;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 /* ==========================================================================
@@ -428,22 +456,40 @@ td, th {
   }
 
   /* Display radio buttons to select dates in big screens */
-  #date-select {
+  .date-select-container {
     display: none;
   }
 
-  #date-radio {
+  .date-radio-container {
     display: block;
   }
 
-  #halls-select {
+  .halls-select-container {
     display: none;
   }
 
-  #halls-radio {
+  .halls-radio-container {
     display: block;
   }
-
+  .subject-select-container
+  {
+    display: block;
+    width: 23em;
+    overflow: hidden;
+    margin: 0 1.5em;
+    border: 0.1em solid;
+    border-radius: 0.25em;
+  }
+  .subjectselect
+  {
+     border:none;
+     overflow: hidden;
+     cursor: pointer;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     width: 18.75em;
+     padding: 0.3125em 0.625em;
+  }
   .css-button {
     font-size: 85%;
   }
