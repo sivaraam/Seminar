@@ -10,15 +10,15 @@
         <meta name="description" content="Seminar hall booking interface for college">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+        <link rel="stylesheet" type = "text/css" href="css/normalize.min.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/light-styles.css">
         <link rel="stylesheet" type="text/css" href="css/radio-button.css">
         <link rel="stylesheet" type="text/css" href="css/radio-button-light-style.css">
-
+      
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-    <body>
+    <body onload = "loadDates(); registerEvents();">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -33,7 +33,7 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-              <form action="book-hall" method="post">
+              <form>
                 <div class="form-item-container">
                   <div class="form-item">
                     <span class="item-description">
@@ -137,9 +137,9 @@
                         </select>
                       </div>
 
-                      <div id="halls-radio-container" class="css-radio clearfix">
+                      <div class="css-radio halls-radio-container clearfix">
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall-radio" id="hall-1">
+                          <input type="radio" name="hall-radio" id="hall-1" value = "cse">
                           <div class="css-button-label-container">
                             <label id="hall-label-1" for="hall-1">
                               CSE
@@ -148,7 +148,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall-radio" id="hall-2">
+                          <input type="radio" name="hall-radio" id="hall-2" value = "ece">
                           <div class="css-button-label-container">
                             <label id="hall-label-2" for="hall-2">
                               ECE
@@ -157,7 +157,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall-radio" id="hall-3">
+                          <input type="radio" name="hall-radio" id="hall-3" value = "eee">
                           <div class="css-button-label-container">
                             <label id="hall-label-3" for="hall-3">
                               EEE
@@ -167,7 +167,7 @@
 
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall-radio" id="hall-4">
+                          <input type="radio" name="hall-radio" id="hall-4" value = "it">
                           <div class="css-button-label-container">
                             <label id="hall-label-4" for="hall-4">
                               IT
@@ -176,7 +176,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall-radio" id="hall-5">
+                          <input type="radio" name="hall-radio" id="hall-5" value = "ice">
                           <div class="css-button-label-container">
                             <label id="hall-label-5" for="hall-5">
                               ICE
@@ -185,7 +185,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall-radio" id="hall-6">
+                          <input type="radio" name="hall-radio" id="hall-6" value = "mech">
                           <div class="css-button-label-container">
                             <label id="hall-label-6" for="hall-6">
                               MECH
@@ -194,7 +194,7 @@
                         </div>
 
                         <div class="css-button halls-button-col">
-                          <input type="radio" name="hall-radio" id="hall-7">
+                          <input type="radio" name="hall-radio" id="hall-7" value = "mba">
                           <div class="css-button-label-container">
                             <label id="hall-label-7" for="hall-7">
                               MBA
@@ -219,42 +219,47 @@
                       <div class="column">
                         <table id="status-table-1">
                           <thead>
-                            <tr>
+						    <tr>
+						      <th> Hours </th>
                               <th> I </th>
                               <th> II </th>
                               <th> III </th>
                               <th> IV </th>
-                            </tr>
+							</tr>
                           </thead>
-                          <tbody>
-                            <tr>
-                              <td> Available </td>
-                              <td> Available </td>
-                              <td> Available </td>
-                              <td> Available </td>
-                            </tr>
-                          </tbody>
+						  <tbody>
+						    <tr>
+						    </tr>
+						  </tbody>
+						  <!--tr>
+                            <td> Available </td>
+                            <td> Available </td>
+                            <td> Available </td>
+                            <td> Available </td>
+						  </tr-->
                         </table>
                       </div> <!-- .column -->
 
                       <div class="column">
                         <table id="status-table-2">
-                          <thead>
-                            <tr>
+						  <thead>
+						    <tr>
                               <th> V </th>
                               <th> VI </th>
                               <th> VII </th>
                               <th> VIII </th>
-                            </tr>
+							</tr>
                           </thead>
-                        <tbody>
+						  <tbody>
                             <tr>
-                              <td> Available </td>
-                              <td> Available </td>
-                              <td> Available </td>
-                              <td> Available </td>
-                            </tr>
-                          </tbody>
+						    </tr>
+						  </tbody>
+						  <!--
+                            <td> Available </td>
+                            <td> Available </td>
+                            <td> Available </td>
+                            <td> Available </td>
+                          </tr-->
                         </table>
                       </div> <!-- column -->
                     </div> <!-- item -->

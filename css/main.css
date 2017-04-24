@@ -175,13 +175,14 @@ html, body {
 
 /* Hide the status table and book button until the user selects
    a date and hall. Will be made visible through JS*/
-#status-table-container {
-  //display: none;
+/*#status-table-container {
+  display: none;
 }
 
 #button-container {
-  //display: none;
-}
+  display: none;
+}	*/
+
 
 .item {
   padding: 0.25em 0em;
