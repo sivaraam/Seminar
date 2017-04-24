@@ -22,6 +22,7 @@
 
 .css-radio .css-button .css-button-label-container {
   border: 0.1em solid;
+  border-radius:0.25em;
   margin: 0 1.5em;
   text-align: center;
   transition: border 0.25s linear;

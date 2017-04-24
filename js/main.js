@@ -1,70 +1,93 @@
-var curr_highlight = "day1";
+var curr_date = "date-1";
+var curr_val = "cse";
 var  month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 var day = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 var hours = [];
-var hallValue;
+var hallValue,dateValue;
 var newDate = new Date();
-function callJSP() {
-	var value = $(document.getElementById(curr_highlight)).val();
-	hallValue = $("#halls").val();
-	$.post("jsp/seminar.jsp", { dat : value.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue } ,
+
+function displaySchedule() {
+	dateValue = $(document.getElementById(curr_date)).val();
+	hallValue = $(document.getElementById(curr_hall)).val();
+	$.post("jsp/display.jsp", { dat : dateValue.slice(0,2), mnth : month[newDate.getMonth()] , yr : newDate.getFullYear()-2000 , hall : hallValue } ,
 	function(data,status){
-		document.getElementById("status-table").rows[1].innerHTML=data;
-		$("table").show();
+		var index = data.indexOf("stop");
+		var contents_table1 = data.slice(0,index);
+		var contents_table2 = data.slice(index+4,-1);
+		document.getElementById("status-table-1").rows[1].innerHTML = contents_table1;
+		document.getElementById("status-table-2").rows[1].innerHTML = contents_table2;
+		document.getElementById("button-container").style.display = "block";
+		document.getElementById("status-table-container").style.display = "block";
 		check();
 	});
 }
+
 function check(){
 	$(':checkbox').change(function () {
     if ($(this).prop("checked")) {
 		hours.push($(this).val());
     }
-	});
-}
-function book(e)
- {
-	hallValue = $("#halls").val();
-	var val=$(document.getElementById(curr_highlight)).val();
-	var h=hours.length;
-	if(h==0) {
-		alert("Please select an hour");
-	}
 	else {
-		alert(hours.length);
-		for ( var k = 0 ; k < h ; k++) {
-		$.post("jsp/sem.jsp",{ arr : hours[k],hall:hallValue,dat:val.slice(0,2),mnth:month[newDate.getMonth()],yr: newDate.getFullYear()-2000 },
-			function(data,status) { 
-			alert(data);
-			});
+		for(var i = 0;i < hours.length;m++) {
+			if($(this).val()==hours[m]) {
+				hours.splice(m,1);
+				break;
+			}
 		}
 	}
+	});
+}
+
+function book(e) {
+	dateValue = $(document.getElementById(curr_date)).val();
+	hallValue = $(document.getElementById(curr_hall)).val();
+	var h=hours.length;
+	if(h==0) {
+		confirm("Please select an hour");
+	}
+	else {
+		var staff_id = prompt("Enter the your id:");
+		for(var i = 0 ;i < h ; i++) {
+		    $.post("jsp/book.jsp", { arr: hours[i], dat: dateValue.slice(0,2),
+			mnth: month[newDate.getMonth()] , yr: newDate.getFullYear()-2000 , hall: hallValue,
+			sid: staff_id} ,
+			function(data,status){
+				alert(data);
+			});
+		}
+		alert("ENd");
+	}
+	hours=[];
  }
+ 
 function date_change(e) {
-	curr_highlight = e.target.getAttribute("id");
-	callJSP();
+	curr_date = e.target.getAttribute("id");
 }
 
 function hall_change(e) {
-	callJSP();
+	curr_hall = e.target.getAttribute("id");
+	displaySchedule();
+
 }
 
 function registerEvents() {
-	$("table").hide();
-	document.getElementById("halls").addEventListener("change",hall_change,false);
+	document.getElementById("halls-select").addEventListener("change",hall_change,false);
 	for(var i = 1;i <= 5; i++) {
-		document.getElementById("day"+i).addEventListener("change",date_change,false);
-	}
-	document.getElementById("Book").addEventListener("click",book,false);
+		document.getElementById("date-"+i).addEventListener("change",date_change,false);
+		document.getElementById("hall-"+i).addEventListener("change",hall_change,false);
+	}	
+	document.getElementById("hall-6").addEventListener("change",hall_change,false);
+	document.getElementById("hall-7").addEventListener("change",hall_change,false);
+	document.getElementById("book").addEventListener("click",book,false);
 }
 
 function loadDates() {
-	date_buttons_html = "";
 	for (var i = 1; i <= 5; i++) {
 		day_index = (newDate.getDay() + (i-1)) % 7;
 		curr_date = (newDate.getDate() + (i-1)) + " " + day[day_index];
-		date_buttons_html += "<input type=\"radio\" name=\"date\" id=\"day"+i+"\" class=\"\" value = \""+curr_date+"\">"+curr_date+"</input>";
+		document.getElementById("date-"+i).setAttribute("value",curr_date);
+		document.getElementById("date-label-"+i).innerHTML = curr_date;
 	}
-	document.getElementById("date-buttons").innerHTML = date_buttons_html;
 }
 
 function parseDate(date) {
