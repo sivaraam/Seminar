@@ -9,11 +9,11 @@
   border-color: transparent;
 }
 
-.css-radio .css-button:hover label {
+.css-radio .css-button label:hover {
   color: #fff;
 }
 
-.css-radio .css-button:hover .css-button-label-container {
+.css-radio .css-button .css-button-label-container:hover {
   border-color: #fff;
 }
 
