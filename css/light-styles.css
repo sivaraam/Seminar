@@ -4,13 +4,13 @@
    ========================================================================== */
 @import url('http://fonts.googleapis.com/css?family=Lato');
 html, body {
-  font-family: 'Lato', sans-serif; 
+  font-family: 'Lato', sans-serif;
   background-color: #dadbdf;
 }
 
 .header-container {
   background-color: #036;
-	border-bottom-color: white;
+  border-bottom-color: white;
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -25,11 +25,11 @@ html, body {
 }
 
 .item table {
-		color: #eee;
+  color: #eee;
 }
 
 .form-item-container .button {
-		color: black;
+  color: black;
 }
 
 select {
@@ -45,7 +45,6 @@ table th{
   background-color:  #036;
 }
 
-
 table td{
   border-color: #c69;
   background-color:  #c69;
@@ -53,12 +52,13 @@ table td{
 
 input[type=submit]
 {
-    border-color: #ff3b3f;
-    background-color: #ff3b3f;
-    color: white;
+  border-color: #ff3b3f;
+  background-color: #ff3b3f;
+  color: white;
 }
+
 input[type=submit]:hover
 {
-    background-color: #76323f;
-    border-color: #76323f;
+  background-color: #76323f;
+  border-color: #76323f;
 }
