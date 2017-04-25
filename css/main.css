@@ -213,6 +213,7 @@ table th, table tr , table td{
 input[type=button]
 {
     border: 0.1em solid;
+    border-radius: 0.2em;
     font-size: 1.2em;
     width : 4em;
     padding: 0.2em 0;
