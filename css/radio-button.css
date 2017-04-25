@@ -28,7 +28,7 @@
   transition: border 0.25s linear;
 }
 
-.css-radio .css-button .css-button-label-container:hover  {
+.css-radio .css-button .css-button-label-container:hover {
   border: 0.1em solid;
   border-radius: 0.25em;
 }
