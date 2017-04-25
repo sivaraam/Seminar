@@ -60,6 +60,7 @@ table th, table td {
    background-repeat: no-repeat;
    -webkit-appearance: button;  
    -moz-appearance: button;
+   appearance:button;
 }
 
 .btn {
