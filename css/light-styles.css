@@ -40,31 +40,16 @@ table {
   border-color: #ccc;
 }
 
-table th{
+table th, table td {
   border-color:#036;
   color:#036;
 }
 
-table td{
-  border-color: #036;
-  color:#036;
-}
-
-input[type=submit]
-{
-    border-color: #ff3b3f;
-    background-color: #ff3b3f;
-    color: white;
-}
-input[type=submit]:hover
-{
-    background-color: #76323f;
-    border-color: #76323f;
-}
 .subject-select-container
 {
    border-color: #c69;
 }
+
 .subjectselect
 {
    color: #c69;
@@ -75,4 +60,15 @@ input[type=submit]:hover
    background-repeat: no-repeat;
    -webkit-appearance: button;  
    -moz-appearance: button;
+}
+
+.btn {
+  background-color: #ff3b3f;
+  border-color: transparent;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #76323f;
+  border-color: transparent;
 }
