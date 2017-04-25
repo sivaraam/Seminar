@@ -74,4 +74,5 @@ input[type=submit]:hover
    background-position: 87% center;
    background-repeat: no-repeat;
    -webkit-appearance: button;  
+   -moz-appearance: button;
 }
