@@ -210,19 +210,15 @@ table th, table tr , table td{
 /*===========================================================================
    Style for submit button
  ===========================================================================*/
-input[type=submit]
+input[type=button]
 {
     border: 0.1em solid;
-    width:5.25em;
-    padding: 0.3em 0.6em;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.3em;
-    margin: 0.2em 0.1em;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
+    font-size: 1.2em;
+    width : 4em;
+    padding: 0.2em 0;
+    -webkit-transition-duration: 0.4s;
+       -moz-transition-duration: 0.4s;
+            transition-duration: 0.4s;
 }
 
 /* ==========================================================================

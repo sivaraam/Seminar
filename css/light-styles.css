@@ -43,23 +43,21 @@ table {
 table th{
   border-color:#036;
   color:#036;
-  //background-color:  #036;
 }
 
 table td{
   border-color: #036;
   color:#036;
-  //background-color:  #c69;
 }
 
-input[type=submit]
+input[type=button]
 {
-  border-color: #ff3b3f;
   background-color: #ff3b3f;
+  border-color: #ff3b3f;
   color: white;
 }
 
-input[type=submit]:hover
+input[type=button]:hover
 {
   background-color: #76323f;
   border-color: #76323f;
