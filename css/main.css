@@ -492,6 +492,10 @@ table th, table tr , table td{
   .css-button {
     font-size: 100%;
   }
+
+  .btn {
+    font-size: 125%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
