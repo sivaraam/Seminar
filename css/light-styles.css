@@ -45,20 +45,13 @@ table th{
   color:#036;
 }
 
-table td{
-  border-color: #036;
-  color:#036;
-}
-
-input[type=button]
-{
+.btn {
   background-color: #ff3b3f;
-  border-color: #ff3b3f;
+  border-color: transparent;
   color: white;
 }
 
-input[type=button]:hover
-{
+.btn:hover {
   background-color: #76323f;
-  border-color: #76323f;
+  border-color: transparent;
 }

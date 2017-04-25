@@ -210,16 +210,17 @@ table th, table tr , table td{
 /*===========================================================================
    Style for submit button
  ===========================================================================*/
-input[type=button]
-{
-    border: 0.1em solid;
-    border-radius: 0.2em;
-    font-size: 1.2em;
-    width : 4em;
-    padding: 0.2em 0;
-    -webkit-transition-duration: 0.4s;
-       -moz-transition-duration: 0.4s;
-            transition-duration: 0.4s;
+
+.btn {
+  padding: 6px 12px;
+  border: 1px solid;
+  font-size: 1.1em;
+  font-weight: 500;
+  border-radius: 0.25em;
+  vertical-align: middle;
+  -webkit-transition-duration: 0.4s;
+     -moz-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 /* ==========================================================================
