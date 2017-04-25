@@ -40,7 +40,7 @@ table {
   border-color: #ccc;
 }
 
-table th{
+table th, table td {
   border-color:#036;
   color:#036;
 }
