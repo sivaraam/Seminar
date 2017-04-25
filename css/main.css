@@ -209,19 +209,17 @@ table th, table tr , table td{
 /*===========================================================================
    Style for submit button
  ===========================================================================*/
-input[type=submit]
-{
-    border: 0.1em solid;
-    width:5.25em;
-    padding: 0.3em 0.6em;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.3em;
-    margin: 0.2em 0.1em;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
+
+.btn {
+  padding: 6px 12px;
+  border: 1px solid;
+  font-size: 1.1em;
+  font-weight: 500;
+  border-radius: 0.25em;
+  vertical-align: middle;
+  -webkit-transition-duration: 0.4s;
+     -moz-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 /* ==========================================================================
@@ -516,14 +514,17 @@ input[type=submit]
 @media only screen and (min-width: 1024px) {
     #logo {
       display: block;
+      margin-top: 0;
     }
 
     td, th {
       padding: 0.5em;
     }
 }
-@media only screen and (min-width: 500px) {   /* Custom Media Query */
-  .main {     /*Increase padding of form container for medium-sized screen */
+
+@media only screen and (min-width: 500px) {
+  /*Increase padding of form container for medium-sized screen */
+  .main {
     padding: 1em 1em;
   }
 }
