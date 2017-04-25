@@ -142,7 +142,7 @@ html, body {
 .main-container {
   text-align: left;
   padding-top: 1em;
-  margin-right: 1em;
+  //margin-right: 1em;
   transition: border 0.5s linear;
 }
 
