@@ -1,8 +1,8 @@
 <%@page import = "java.sql.*,java.util.*"%>
 <%
-String dat = request.getParameter("dat");
-String month = request.getParameter("mnth");
-String yr = request.getParameter("yr");
+String dat = request.getParameter("date");
+String month = request.getParameter("month");
+String yr = request.getParameter("year");
 String hall = request.getParameter("hall");
 String parsedDate = dat+"-"+month+"-"+yr;
 Class.forName("oracle.jdbc.driver.OracleDriver");  
