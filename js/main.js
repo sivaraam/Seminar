@@ -1,107 +1,138 @@
-curr_date = "date-1";
-curr_val = "cse";
-months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-hours = [];
-newDate = new Date();
+/* Global constants required for Code */
+const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const currDate = new Date();
 
-function displaySchedule() {
-	getValues();
-	$.post("jsp/display.jsp", { date : dateValue.slice(0,2), month : months[newDate.getMonth()] , 
-        year : newDate.getFullYear()-2000 , hall : hallValue } , function(data,status){
-			var index = data.indexOf("stop");
-			var contents_table1 = data.slice(0,index);
-			var contents_table2 = data.slice(index+4,-1);
-			document.getElementById("status-table-1").rows[1].innerHTML = contents_table1;
-			document.getElementById("status-table-2").rows[1].innerHTML = contents_table2;
-			showTableAndButton();
-			check();
-	});
+currSelectedDateID = "date-1";
+currSelectedHallID = "cse";
+selectedHours = [];
+
+/************** Helper Functions *********************/
+
+// Why's this left unused ?
+function parseDate(date) {
+  if(date < 10) {
+    date = '0'+date;
+  }
+  return date;
 }
 
-function book(e) {
-	getValues();
-	var total_checked=hours.length;
-	if(total_checked == 0) {
-		confirm("Please select an hour");
-	}
-	else {
-		var staff_id = prompt("Enter the your id:");
-		for(var i = 0 ;i < total_checked ; i++) {
-		    $.post("jsp/book.jsp", { period: hours[i], date: dateValue.slice(0,2),
-                month: months[newDate.getMonth()] , year: newDate.getFullYear()-2000 , hall: hallValue,
-                staff_id: staff_id} ,function(data,status) {
-                    alert(data);
-			});
-		}
-		alert("ENd");
-	}
-	hours=[];
+function getValues() {
+  var dateValue = $(document.getElementById(currSelectedDateID)).val();
+  var hallValue = $(document.getElementById(currSelectedHallID)).val();
+  return [dateValue, hallValue]
 }
- 
+
 function showTableAndButton() {
     document.getElementById("button-container").style.display = "block";
     document.getElementById("status-table-container").style.display = "block";
 }
 
-function getValues() {
-	dateValue = $(document.getElementById(curr_date)).val();
-	hallValue = $(document.getElementById(curr_hall)).val();
-}
-
 function check() {
-	$(':checkbox').change(function () {
-    if ($(this).prop("checked")) {
-		hours.push($(this).val());
-    }
-	else {
-		for(var i = 0;i < hours.length;i++) {
-			if($(this).val() == hours[i]) {
-				hours.splice(i,1);
-				break;
-			}
-		}
-	}
-	});
+  // Looks suspicious ....
+  $(':checkbox').change(
+                        () => {
+                        if ($(this).prop("checked"))
+                          selectedHours.push($(this).val());
+                        else
+                          for(var i = 0; i < selectedHours.length; i++)
+                            if($(this).val() == selectedHours[i]) {
+                              selectedHours.splice(i,1);
+                              break;
+                            }
+                        }
+                       );
 }
 
-function date_change(e) {
-	curr_date = e.target.getAttribute("id");
+function invokeDataHandler(handlerLocation, paramsObj, callBack) {
+    $.post(handlerLocation, paramsObj, callBack);
 }
 
-function hall_change(e) {
-	curr_hall = e.target.getAttribute("id");
-	displaySchedule();
-
-}
-
-function registerEvents() {
-	addListener("halls-select","change",hall_change);
-	for(var i = 1;i <= 5; i++) {
-		addListener("date-"+i,"change",date_change);
-		addListener("hall-"+i,"change",hall_change);
-	}	
-	addListener("hall-6","change",hall_change);
-	addListener("hall-7","change",hall_change);
-	addListener("book","click",book);
-}
-
-function loadDates() {
-	for (var i = 1; i <= 5; i++) {
-		day_index = (newDate.getDay() + (i-1)) % 7;
-		curr_date = (newDate.getDate() + (i-1)) + " " + days[day_index];
-		document.getElementById("date-"+i).setAttribute("value",curr_date);
-		document.getElementById("date-label-"+i).innerHTML = curr_date;
-	}
+function displaySchedule() {
+  const [dateValue, hallValue] = getValues();
+  invokeDataHandler(
+                     "jsp/display.jsp",
+                     {
+                       date  : dateValue.slice(0,2),
+                       month : months[currDate.getMonth()],
+                       year  : currDate.getFullYear()-2000,
+                       hall  : hallValue
+                     },
+                     (data,status) => {
+                       var index = data.indexOf("stop");
+                       var table1Contents = data.slice(0,index);
+                       var table2Contents = data.slice(index+4,-1);
+                       document.getElementById("status-table-1").rows[1].innerHTML = table1Contents;
+                       document.getElementById("status-table-2").rows[1].innerHTML = table2Contents;
+                       showTableAndButton();
+                       check();
+                     }
+                   );
 }
 
 function addListener(elementName,eventName,callback) {
-	document.getElementById(elementName).addEventListener(eventName,callback,false);
+  document.getElementById(elementName).addEventListener(eventName, callback, false);
 }
 
-function parseDate(date) {
-	if(date < 10) {
-		date = '0'+date;
-	}
-	return date;
+/************** Event Listeners **********************/
+
+function dateChangeListener(e) {
+  currSelectedDateID = e.target.getAttribute("id");
+}
+
+function hallChangeListener(e) {
+  currSelectedHallID = e.target.getAttribute("id");
+  displaySchedule();
+}
+
+function bookHallListener(e) {
+  const [dateValue, hallValue] = getValues();
+  if(selectedHours.length === 0) {
+    confirm("Please select an hour");
+  }
+  else {
+    var staffId = prompt("Enter the your id:");
+    selectedHours.forEach(
+                          (hour) => {
+                                      invokeDataHandler(
+                                                        "jsp/book.jsp",
+                                                        {
+                                                          period   : hour,
+                                                          date     : dateValue.slice(0,2),
+                                                          month    : months[currDate.getMonth()],
+                                                          year     : currDate.getFullYear()-2000,
+                                                          hall     : hallValue,
+                                                          staff_id : staffId
+                                                        },
+                                                        (data,status) => {
+                                                          alert(data);
+                                                        }
+                                                      );
+                                    }
+                          );
+    alert("The End !!!");
+  }
+  selectedHours = [];     //Probably for testing
+}
+
+/************** Functions invoked during page load ********************/
+function registerEvents() {
+  addListener("date-select","change", dateChangeListener);        // For date chosen through select (small screens)
+  for (var i = 1; i <= 5; i++)
+    addListener("date-"+i,"change", dateChangeListener);          // For date chose through radio (bigger screens)
+
+  addListener("halls-select","change", hallChangeListener);     // For halls chosen through select (small screens)
+  for (var i = 1; i <= 7; i++)
+    addListener("hall-"+i,"change", hallChangeListener);          // For halls chose through radio (bigger screens)
+
+  addListener("book","click",bookHallListener);
+}
+
+function loadDates() {
+  for (var i = 1; i <= 5; i++) {
+    var dayIndex = (currDate.getDay() + (i-1)) % 7;
+    var dateAndDay = (currDate.getDate() + (i-1)) + " " + days[dayIndex];
+    document.getElementById("date-"+i).setAttribute("value", dateAndDay);
+    document.getElementById("date-label-"+i).innerHTML = dateAndDay;
+  }
 }
