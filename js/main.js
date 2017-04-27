@@ -128,11 +128,16 @@ function registerEvents() {
   addListener("book","click",bookHallListener);
 }
 
+/*
+    TODO: Dates to be loaded for select
+*/
 function loadDates() {
   for (var i = 1; i <= 5; i++) {
     var dayIndex = (currDate.getDay() + (i-1)) % 7;
     var dateAndDay = (currDate.getDate() + (i-1)) + " " + days[dayIndex];
+    var dateAndDayText = document.createTextNode(dateAndDay)
+
     document.getElementById("date-"+i).setAttribute("value", dateAndDay);
-    document.getElementById("date-label-"+i).innerHTML = dateAndDay;
+    document.getElementById("date-label-"+i).appendChild(dateAndDayText);
   }
 }
