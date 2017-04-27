@@ -9,7 +9,6 @@ selectedHours = [];
 
 /************** Helper Functions *********************/
 
-// Why's this left unused ?
 function parseDate(date) {
   if(date < 10) {
     date = '0'+date;
@@ -29,9 +28,7 @@ function showTableAndButton() {
 }
 
 function check() {
-  // Looks suspicious ....
-  $(':checkbox').change(
-                        () => {
+  $(':checkbox').change(function() {
                         if ($(this).prop("checked"))
                           selectedHours.push($(this).val());
                         else
@@ -112,7 +109,7 @@ function bookHallListener(e) {
                           );
     alert("The End !!!");
   }
-  selectedHours = [];     //Probably for testing
+  selectedHours = [];     //For testing
 }
 
 /************** Functions invoked during page load ********************/
@@ -133,11 +130,12 @@ function registerEvents() {
 */
 function loadDates() {
   for (var i = 1; i <= 5; i++) {
-    var dayIndex = (currDate.getDay() + (i-1)) % 7;
-    var dateAndDay = (currDate.getDate() + (i-1)) + " " + days[dayIndex];
+    var dayIndex = (currDate.getDay() + (i-1)) % 7;   
+    var dateAndDay = parseDate(currDate.getDate()) + " " + days[dayIndex];
     var dateAndDayText = document.createTextNode(dateAndDay)
-
     document.getElementById("date-"+i).setAttribute("value", dateAndDay);
     document.getElementById("date-label-"+i).appendChild(dateAndDayText);
+    currDate.setDate(currDate.getDate()+1);
+
   }
 }
