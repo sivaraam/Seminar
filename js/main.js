@@ -124,7 +124,7 @@ function registerEvents() {
     TODO: Dates to be loaded for select
 */
 function loadDates() {
-  currDate = new Date();
+  let currDate = new Date();
   for (var i = 1; i <= 5; i++) {
     var dateAndDay = currDate.getDate() + " " + days[currDate.getDay()];
     var dateAndDayText = document.createTextNode(dateAndDay)
