@@ -1,24 +1,18 @@
+'use strict'
 /* Global constants required for Code */
 const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-const currDate = new Date();
 
-currSelectedDateID = "date-1";
-currSelectedHallID = "cse";
-selectedHours = [];
+var currSelectedDateID = "date-1";
+var currSelectedHallID = "cse";
+var selectedHours = [];
 
 /************** Helper Functions *********************/
 
-// Why's this left unused ?
-function parseDate(date) {
-  if(date < 10) {
-    date = '0'+date;
-  }
-  return date;
-}
-
 function getValues() {
-  var dateValue = $(document.getElementById(currSelectedDateID)).val();
+  var dateIndex = parseInt(currSelectedDateID.slice(5,6));
+  var dateValue = new Date();
+  dateValue.setDate(dateValue.getDate()+dateIndex-1);  //Today's date + offset
   var hallValue = $(document.getElementById(currSelectedHallID)).val();
   return [dateValue, hallValue]
 }
@@ -29,9 +23,7 @@ function showTableAndButton() {
 }
 
 function check() {
-  // Looks suspicious ....
-  $(':checkbox').change(
-                        () => {
+  $(':checkbox').change(function() {
                         if ($(this).prop("checked"))
                           selectedHours.push($(this).val());
                         else
@@ -53,15 +45,15 @@ function displaySchedule() {
   invokeDataHandler(
                      "jsp/display.jsp",
                      {
-                       date  : dateValue.slice(0,2),
-                       month : months[currDate.getMonth()],
-                       year  : currDate.getFullYear()-2000,
+                       date  : dateValue.getDate(),
+                       month : months[dateValue.getMonth()],
+                       year  : dateValue.getFullYear()-2000,
                        hall  : hallValue
                      },
                      (data,status) => {
-                       var index = data.indexOf("stop");
-                       var table1Contents = data.slice(0,index);
-                       var table2Contents = data.slice(index+4,-1);
+                       var splitIndex = data.indexOf("stop");
+                       var table1Contents = data.slice(0,splitIndex);
+                       var table2Contents = data.slice(splitIndex+4,-1);
                        document.getElementById("status-table-1").rows[1].innerHTML = table1Contents;
                        document.getElementById("status-table-2").rows[1].innerHTML = table2Contents;
                        showTableAndButton();
@@ -98,9 +90,9 @@ function bookHallListener(e) {
                                                         "jsp/book.jsp",
                                                         {
                                                           period   : hour,
-                                                          date     : dateValue.slice(0,2),
-                                                          month    : months[currDate.getMonth()],
-                                                          year     : currDate.getFullYear()-2000,
+                                                          date     : dateValue.getDate(),
+                                                          month    : months[dateValue.getMonth()],
+                                                          year     : dateValue.getFullYear()-2000,
                                                           hall     : hallValue,
                                                           staff_id : staffId
                                                         },
@@ -112,7 +104,7 @@ function bookHallListener(e) {
                           );
     alert("The End !!!");
   }
-  selectedHours = [];     //Probably for testing
+  selectedHours = [];     //For testing
 }
 
 /************** Functions invoked during page load ********************/
@@ -132,12 +124,12 @@ function registerEvents() {
     TODO: Dates to be loaded for select
 */
 function loadDates() {
+  let currDate = new Date();
   for (var i = 1; i <= 5; i++) {
-    var dayIndex = (currDate.getDay() + (i-1)) % 7;
-    var dateAndDay = (currDate.getDate() + (i-1)) + " " + days[dayIndex];
+    var dateAndDay = currDate.getDate() + " " + days[currDate.getDay()];
     var dateAndDayText = document.createTextNode(dateAndDay)
-
     document.getElementById("date-"+i).setAttribute("value", dateAndDay);
     document.getElementById("date-label-"+i).appendChild(dateAndDayText);
+    currDate.setDate(currDate.getDate()+1);
   }
 }
