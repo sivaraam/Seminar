@@ -2,9 +2,9 @@
 const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
-currSelectedDateID = "date-1";
-currSelectedHallID = "cse";
-selectedHours = [];
+var currSelectedDateID = "date-1";
+var currSelectedHallID = "cse";
+var selectedHours = [];
 
 /************** Helper Functions *********************/
 
