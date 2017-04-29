@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * jQuery JavaScript Library v1.11.2
  * http://jquery.com/
  *

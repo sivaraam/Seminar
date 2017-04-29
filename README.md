@@ -1,4 +1,4 @@
-﻿Seminar Hall Booking
+Seminar Hall Booking
 ====================
 
 This project is to develop a seminar hall booking system for the college to

@@ -1,4 +1,4 @@
-﻿<%@page import = "java.sql.*,java.util.*"%>
+<%@page import = "java.sql.*,java.util.*"%>
 <%
 	String hall = request.getParameter("hall");
 	String hours = request.getParameter("period");

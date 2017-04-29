@@ -1,4 +1,4 @@
-﻿<%@page import = "java.sql.*,java.util.*"%>
+<%@page import = "java.sql.*,java.util.*"%>
 <%
 String dat = request.getParameter("date");
 String month = request.getParameter("month");
