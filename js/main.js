@@ -33,6 +33,7 @@ function registerCheckBoxHandler() {
         }
   }
 
+  /* TODO : This should be more specific as checkbox type is too broad */
   $(':checkbox').change(checkBoxChangeHandler);
 }
 
