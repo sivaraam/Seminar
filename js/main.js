@@ -28,7 +28,7 @@ function check() {
                         if ($(this).prop("checked"))
                           selectedHours.push($(this).val());
                         else
-                          for(var i = 0; i < selectedHours.length; i++)
+                          for(let i = 0; i < selectedHours.length; i++)
                             if($(this).val() == selectedHours[i]) {
                               selectedHours.splice(i,1);
                               break;
@@ -111,11 +111,11 @@ function bookHallListener(e) {
 /************** Functions invoked during page load ********************/
 function registerEvents() {
   addListener("date-select","change", dateChangeListener);        // For date chosen through select (small screens)
-  for (var i = 1; i <= 5; i++)
+  for (let i = 1; i <= 5; i++)
     addListener("date-"+i,"change", dateChangeListener);          // For date chose through radio (bigger screens)
 
   addListener("halls-select","change", hallChangeListener);     // For halls chosen through select (small screens)
-  for (var i = 1; i <= 7; i++)
+  for (let i = 1; i <= 7; i++)
     addListener("hall-"+i,"change", hallChangeListener);          // For halls chose through radio (bigger screens)
 
   addListener("book","click",bookHallListener);
