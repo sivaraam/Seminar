@@ -198,10 +198,6 @@ table th, table tr , table td{
   text-align: center;
 }
 
-[id^=day-container] {
-  display: inline-block;
-}
-
 .form-item-container .button {
   text-align: center;
 }
