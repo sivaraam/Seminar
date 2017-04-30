@@ -12,8 +12,9 @@ var selectedHours = [];
 function getValues() {
   var dateIndex = parseInt(currSelectedDateID.slice(5,6));
   var dateValue = new Date();
-  dateValue.setDate(dateValue.getDate()+dateIndex-1);  //Today's date + offset
   var hallValue = $(document.getElementById(currSelectedHallID)).val();
+
+  dateValue.setDate(dateValue.getDate()+dateIndex-1);  //Today's date + offset
   return [dateValue, hallValue];
 }
 
@@ -38,7 +39,7 @@ function registerCheckBoxHandler() {
 }
 
 function invokeDataHandler(handlerLocation, paramsObj, callBack) {
-    $.post(handlerLocation, paramsObj, callBack);
+  $.post(handlerLocation, paramsObj, callBack);
 }
 
 function displaySchedule() {
@@ -52,11 +53,11 @@ function displaySchedule() {
                        hall  : hallValue
                      },
                      (data,status) => {
-                       var splitIndex = data.indexOf('stop');
-                       var table1Contents = data.slice(0,splitIndex);
-                       var table2Contents = data.slice(splitIndex+4,-1);
-                       document.getElementById('status-table-1').rows[1].innerHTML = table1Contents;
-                       document.getElementById('status-table-2').rows[1].innerHTML = table2Contents;
+                       let splitIndex = data.indexOf("stop");
+                       let table1Contents = data.slice(0,splitIndex);
+                       let table2Contents = data.slice(splitIndex+4,-1);
+                       document.getElementById("status-table-1").rows[1].innerHTML = table1Contents;
+                       document.getElementById("status-table-2").rows[1].innerHTML = table2Contents;
                        showTableAndButton();
                        registerCheckBoxHandler();
                      }
@@ -81,7 +82,7 @@ function bookHallListener(e) {
     confirm('Please select an hour');
   }
   else {
-    var staffId = prompt('Enter the your id:');
+    let staffId = prompt("Enter the your id:");
     selectedHours.forEach(
                           (hour) => {
                                       invokeDataHandler(
@@ -107,12 +108,13 @@ function bookHallListener(e) {
 
 /************** Functions invoked during page load ********************/
 function registerEvents() {
+<<<<<<< HEAD
   $('#date-select').change(dateChangeListener);        // For date chosen through select (small screens)
-  for (var i = 1; i <= 5; i++)
+  for (let i = 1; i <= 5; i++)
     $(`#date-${i}`).change(dateChangeListener);        // For date chose through radio (bigger screens)
 
   $('#halls-select').change(hallChangeListener);       // For halls chosen through select (small screens)
-  for (var i = 1; i <= 7; i++)
+  for (let i = 1; i <= 7; i++)
     $(`#hall-${i}`).change(hallChangeListener);        // For halls chose through radio (bigger screens)
 
   $('#book').click(bookHallListener);
@@ -120,12 +122,12 @@ function registerEvents() {
 
 /*  TODO: Dates to be loaded for select  */
 function loadDates() {
-  let currDate = new Date();
-  for (var i = 1; i <= 5; i++) {
-    var dateAndDay = currDate.getDate() + ' ' + days[currDate.getDay()];
-    var dateAndDayText = document.createTextNode(dateAndDay)
-    document.getElementById('date-'+i).setAttribute('value', dateAndDay);
-    document.getElementById('date-label-'+i).appendChild(dateAndDayText);
+  var currDate = new Date();
+  for (let i = 1; i <= 5; i++) {
+    let dateAndDay = currDate.getDate() + " " + days[currDate.getDay()];
+    let dateAndDayText = document.createTextNode(dateAndDay)
+    document.getElementById("date-"+i).setAttribute("value", dateAndDay);
+    document.getElementById("date-label-"+i).appendChild(dateAndDayText);
     currDate.setDate(currDate.getDate()+1);
   }
 }
