@@ -67,16 +67,16 @@ function displaySchedule() {
 /************** Event Listeners **********************/
 // NOTE : Check box handler is found above separately
 
-function dateChangeListener(e) {
-  currSelectedDateID = e.target.getAttribute('id');
+function dateChangeListener() {
+  currSelectedDateID = $(this).attr('id');
 }
 
-function hallChangeListener(e) {
-  currSelectedHallID = e.target.getAttribute('id');
+function hallChangeListener() {
+  currSelectedHallID = $(this).attr('id');
   displaySchedule();
 }
 
-function bookHallListener(e) {
+function bookHallListener() {
   const [dateValue, hallValue] = getValues();
   if(selectedHours.length === 0) {
     confirm('Please select an hour');
