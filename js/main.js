@@ -25,14 +25,14 @@ function showTableAndButton() {
 
 function registerCheckBoxHandler() {
   function checkBoxChangeHandler() {
-    if ($(this).prop('checked'))
-      selectedHours.push($(this).val());
-    else
-      for(var i = 0; i < selectedHours.length; i++)
-        if ($(this).val() == selectedHours[i]) {
-          selectedHours.splice(i,1);
-          break;
-        }
+    var hallChanged = $(this);
+    if (hallChanged.prop('checked'))
+      selectedHours.push(hallChanged.val());
+    else {      // remove the hall from selected hours as it was unchecked
+      hallToRemoveIndex = selectedHours.findIndex((currHall) => hallChanged.val() === currHall);
+      if(hallToRemoveIndex != -1)
+        selectedHours.splice(hallToRemoveIndex, 1);
+    }
   }
 
   $(':checkbox').change(checkBoxChangeHandler);
@@ -108,7 +108,6 @@ function bookHallListener(e) {
 
 /************** Functions invoked during page load ********************/
 function registerEvents() {
-<<<<<<< HEAD
   $('#date-select').change(dateChangeListener);        // For date chosen through select (small screens)
   for (let i = 1; i <= 5; i++)
     $(`#date-${i}`).change(dateChangeListener);        // For date chose through radio (bigger screens)
