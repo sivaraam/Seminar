@@ -23,6 +23,7 @@ function showTableAndButton() {
     document.getElementById('status-table-container').style.display = 'block';
 }
 
+
 function registerCheckBoxHandler() {
   function checkBoxChangeHandler() {
     var hallChanged = $(this);
@@ -107,17 +108,6 @@ function bookHallListener() {
 }
 
 /************** Functions invoked during page load ********************/
-function registerEvents() {
-  $('#date-select').change(dateChangeListener);        // For date chosen through select (small screens)
-  for (let i = 1; i <= 5; i++)
-    $(`#date-${i}`).change(dateChangeListener);        // For date chose through radio (bigger screens)
-
-  $('#halls-select').change(hallChangeListener);       // For halls chosen through select (small screens)
-  for (let i = 1; i <= 7; i++)
-    $(`#hall-${i}`).change(hallChangeListener);        // For halls chose through radio (bigger screens)
-
-  $('#book').click(bookHallListener);
-}
 
 /*  TODO: Dates to be loaded for select  */
 function loadDates() {
@@ -130,3 +120,21 @@ function loadDates() {
     currDate.setDate(currDate.getDate()+1);
   }
 }
+
+function registerEvents() {
+  addListener("date-select","change", dateChangeListener);        // For date chosen through select (small screens)
+  for (var i = 1; i <= 5; i++)
+    addListener("date-"+i,"change", dateChangeListener);          // For date chose through radio (bigger screens)
+
+  addListener("halls-select","change", hallChangeListener);     // For halls chosen through select (small screens)
+  for (var i = 1; i <= 7; i++)
+    addListener("hall-"+i,"change", hallChangeListener);          // For halls chose through radio (bigger screens)
+
+  addListener("book","click",bookHallListener);
+}
+
+// Event that triggers the above Functions
+$(document).ready(() => {
+                    loadDates();
+                    registerEvents();
+                  });
