@@ -23,7 +23,6 @@ function showTableAndButton() {
     document.getElementById('status-table-container').style.display = 'block';
 }
 
-
 function registerCheckBoxHandler() {
   function checkBoxChangeHandler() {
     var hallChanged = $(this);
@@ -45,24 +44,22 @@ function invokeDataHandler(handlerLocation, paramsObj, callBack) {
 
 function displaySchedule() {
   const [dateValue, hallValue] = getValues();
-  invokeDataHandler(
-                     'jsp/display.jsp',
-                     {
-                       date  : dateValue.getDate(),
-                       month : months[dateValue.getMonth()],
-                       year  : dateValue.getFullYear()-2000,
-                       hall  : hallValue
-                     },
-                     (data,status) => {
-                       let splitIndex = data.indexOf("stop");
-                       let table1Contents = data.slice(0,splitIndex);
-                       let table2Contents = data.slice(splitIndex+4,-1);
-                       document.getElementById("status-table-1").rows[1].innerHTML = table1Contents;
-                       document.getElementById("status-table-2").rows[1].innerHTML = table2Contents;
-                       showTableAndButton();
-                       registerCheckBoxHandler();
-                     }
-                   );
+  invokeDataHandler("jsp/display.jsp",
+                    {
+                      date  : dateValue.getDate(),
+                      month : months[dateValue.getMonth()],
+                      year  : dateValue.getFullYear()-2000,
+                      hall  : hallValue
+                    },
+                    (data,status) => {
+                      let splitIndex = data.indexOf("stop");
+                      let table1Contents = data.slice(0,splitIndex);
+                      let table2Contents = data.slice(splitIndex+4,-1);
+                      document.getElementById("status-table-1").rows[1].innerHTML = table1Contents;
+                      document.getElementById("status-table-2").rows[1].innerHTML = table2Contents;
+                      showTableAndButton();
+                      check();
+                    });
 }
 
 /************** Event Listeners **********************/
@@ -84,30 +81,38 @@ function bookHallListener() {
   }
   else {
     let staffId = prompt("Enter the your id:");
-    selectedHours.forEach(
-                          (hour) => {
-                                      invokeDataHandler(
-                                                        'jsp/book.jsp',
-                                                        {
-                                                          period   : hour,
-                                                          date     : dateValue.getDate(),
-                                                          month    : months[dateValue.getMonth()],
-                                                          year     : dateValue.getFullYear()-2000,
-                                                          hall     : hallValue,
-                                                          staff_id : staffId
-                                                        },
-                                                        (data,status) => {
-                                                          alert(data);
-                                                        }
-                                                      );
-                                    }
-                          );
-    alert('The End !!!');
+    selectedHours.forEach((hour) => {
+                            invokeDataHandler("jsp/book.jsp",
+                                              {
+                                                period   : hour,
+                                                date     : dateValue.getDate(),
+                                                month    : months[dateValue.getMonth()],
+                                                year     : dateValue.getFullYear()-2000,
+                                                hall     : hallValue,
+                                                staff_id : staffId
+                                              },
+                                              (data,status) => {
+                                                alert(data);
+                                              });
+                            });
+    alert("The End !!!");
   }
   selectedHours = [];     //For testing
 }
 
 /************** Functions invoked during page load ********************/
+
+function registerEvents() {
+  $('#date-select').change(dateChangeListener);        // For date chosen through select (small screens)
+  for (let i = 1; i <= 5; i++)
+    $(`#date-${i}`).change(dateChangeListener);        // For date chose through radio (bigger screens)
+
+  $('#halls-select').change(hallChangeListener);       // For halls chosen through select (small screens)
+  for (let i = 1; i <= 7; i++)
+    $(`#hall-${i}`).change(hallChangeListener);        // For halls chose through radio (bigger screens)
+
+  $('#book').click(bookHallListener);
+}
 
 /*  TODO: Dates to be loaded for select  */
 function loadDates() {
@@ -119,18 +124,6 @@ function loadDates() {
     document.getElementById("date-label-"+i).appendChild(dateAndDayText);
     currDate.setDate(currDate.getDate()+1);
   }
-}
-
-function registerEvents() {
-  addListener("date-select","change", dateChangeListener);        // For date chosen through select (small screens)
-  for (var i = 1; i <= 5; i++)
-    addListener("date-"+i,"change", dateChangeListener);          // For date chose through radio (bigger screens)
-
-  addListener("halls-select","change", hallChangeListener);     // For halls chosen through select (small screens)
-  for (var i = 1; i <= 7; i++)
-    addListener("hall-"+i,"change", hallChangeListener);          // For halls chose through radio (bigger screens)
-
-  addListener("book","click",bookHallListener);
 }
 
 // Event that triggers the above Functions
