@@ -44,24 +44,22 @@ function invokeDataHandler(handlerLocation, paramsObj, callBack) {
 
 function displaySchedule() {
   const [dateValue, hallValue] = getValues();
-  invokeDataHandler(
-                     'jsp/display.jsp',
-                     {
-                       date  : dateValue.getDate(),
-                       month : months[dateValue.getMonth()],
-                       year  : dateValue.getFullYear()-2000,
-                       hall  : hallValue
-                     },
-                     (data,status) => {
-                       let splitIndex = data.indexOf("stop");
-                       let table1Contents = data.slice(0,splitIndex);
-                       let table2Contents = data.slice(splitIndex+4,-1);
-                       document.getElementById("status-table-1").rows[1].innerHTML = table1Contents;
-                       document.getElementById("status-table-2").rows[1].innerHTML = table2Contents;
-                       showTableAndButton();
-                       registerCheckBoxHandler();
-                     }
-                   );
+  invokeDataHandler("jsp/display.jsp",
+                    {
+                      date  : dateValue.getDate(),
+                      month : months[dateValue.getMonth()],
+                      year  : dateValue.getFullYear()-2000,
+                      hall  : hallValue
+                    },
+                    (data,status) => {
+                      var splitIndex = data.indexOf("stop");
+                      var table1Contents = data.slice(0,splitIndex);
+                      var table2Contents = data.slice(splitIndex+4,-1);
+                      document.getElementById("status-table-1").rows[1].innerHTML = table1Contents;
+                      document.getElementById("status-table-2").rows[1].innerHTML = table2Contents;
+                      showTableAndButton();
+                      check();
+                    });
 }
 
 /************** Event Listeners **********************/
@@ -83,30 +81,27 @@ function bookHallListener() {
   }
   else {
     let staffId = prompt("Enter the your id:");
-    selectedHours.forEach(
-                          (hour) => {
-                                      invokeDataHandler(
-                                                        'jsp/book.jsp',
-                                                        {
-                                                          period   : hour,
-                                                          date     : dateValue.getDate(),
-                                                          month    : months[dateValue.getMonth()],
-                                                          year     : dateValue.getFullYear()-2000,
-                                                          hall     : hallValue,
-                                                          staff_id : staffId
-                                                        },
-                                                        (data,status) => {
-                                                          alert(data);
-                                                        }
-                                                      );
-                                    }
-                          );
-    alert('The End !!!');
+    selectedHours.forEach((hour) => {
+                            invokeDataHandler("jsp/book.jsp",
+                                              {
+                                                period   : hour,
+                                                date     : dateValue.getDate(),
+                                                month    : months[dateValue.getMonth()],
+                                                year     : dateValue.getFullYear()-2000,
+                                                hall     : hallValue,
+                                                staff_id : staffId
+                                              },
+                                              (data,status) => {
+                                                alert(data);
+                                              });
+                            });
+    alert("The End !!!");
   }
   selectedHours = [];     //For testing
 }
 
 /************** Functions invoked during page load ********************/
+
 function registerEvents() {
   $('#date-select').change(dateChangeListener);        // For date chosen through select (small screens)
   for (let i = 1; i <= 5; i++)
@@ -130,3 +125,9 @@ function loadDates() {
     currDate.setDate(currDate.getDate()+1);
   }
 }
+
+// Event that triggers the above Functions
+$(document).ready(() => {
+                    loadDates();
+                    registerEvents();
+                  });
