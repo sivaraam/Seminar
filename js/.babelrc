@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "firefox": 30
+        }
+      }
+    ]
+  ],
+  "plugins": []
+}

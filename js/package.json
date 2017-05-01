@@ -1,0 +1,31 @@
+{
+  "name": "sce-seminar",
+  "version": "0.1.0",
+  "description": "Seminar Hall implementation for the college",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel main.js -d output",
+    "lint": "eslint main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirganeshv/Seminar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirganeshv/Seminar/issues"
+  },
+  "homepage": "https://github.com/sirganeshv/Seminar#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.4.0",
+    "browserify": "^14.3.0",
+    "eslint": "^3.19.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
