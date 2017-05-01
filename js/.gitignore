@@ -2,6 +2,9 @@
 
 node_modules/
 
-# Ignore babel generated output files
+# Ignore files that are to be distributed
 
-output/
+dist/
+
+
+
