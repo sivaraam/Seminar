@@ -107,17 +107,6 @@ function bookHallListener(e) {
 }
 
 /************** Functions invoked during page load ********************/
-function registerEvents() {
-  addListener("date-select","change", dateChangeListener);        // For date chosen through select (small screens)
-  for (var i = 1; i <= 5; i++)
-    addListener("date-"+i,"change", dateChangeListener);          // For date chose through radio (bigger screens)
-
-  addListener("halls-select","change", hallChangeListener);     // For halls chosen through select (small screens)
-  for (var i = 1; i <= 7; i++)
-    addListener("hall-"+i,"change", hallChangeListener);          // For halls chose through radio (bigger screens)
-
-  addListener("book","click",bookHallListener);
-}
 
 /*
     TODO: Dates to be loaded for select
@@ -132,3 +121,21 @@ function loadDates() {
     currDate.setDate(currDate.getDate()+1);
   }
 }
+
+function registerEvents() {
+  addListener("date-select","change", dateChangeListener);        // For date chosen through select (small screens)
+  for (var i = 1; i <= 5; i++)
+    addListener("date-"+i,"change", dateChangeListener);          // For date chose through radio (bigger screens)
+
+  addListener("halls-select","change", hallChangeListener);     // For halls chosen through select (small screens)
+  for (var i = 1; i <= 7; i++)
+    addListener("hall-"+i,"change", hallChangeListener);          // For halls chose through radio (bigger screens)
+
+  addListener("book","click",bookHallListener);
+}
+
+// Event that triggers the above Functions
+$(document).ready(() => {
+                    loadDates();
+                    registerEvents();
+                  });
