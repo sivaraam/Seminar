@@ -1,4 +1,4 @@
-﻿.hour-checkbox input[type="checkbox"] + label::before {
+.hour-checkbox input[type="checkbox"] + label::before {
   border-right-color: #72777d;
   border-bottom-color: #72777d;
 }
