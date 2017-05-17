@@ -44,6 +44,7 @@ function invokeDataHandler(handlerLocation, paramsObj, callBack) {
     $.post(handlerLocation, paramsObj, callBack);
 }
 
+// TODO : Make this request a GET request
 function displaySchedule() {
     const [dateValue, hallValue] = getValues();
     invokeDataHandler('jsp/display.jsp',
