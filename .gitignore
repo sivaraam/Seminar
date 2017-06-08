@@ -1,2 +1,5 @@
 # Ignore the old project files
 old/
+
+# Ignore node modules
+node_modules/
