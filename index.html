@@ -17,12 +17,17 @@
       <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header>
+    <header class="header-container">
       <img src="img/logo.jpg" alt="College logo">
       <h1 class="mdc-typography--display1">Seminar hall booking</h1>
     </header>
     <script src="node_modules/jquery/dist/jquery.js"></script>
 
+    <div class="main-container">
+      <div class="iframe-container" referrer="origin">
+          <iframe src="form-1.html" name="booking-form"></iframe>
+      </div>
+    </div>
     <!-- Material design components JS -->
     <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
     <script>mdc.autoInit()</script>
