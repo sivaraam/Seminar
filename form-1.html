@@ -4,18 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>First form</title>
-    <link rel="stylesheet" href="external/jquery-ui/jquery-ui.css">
+
+    <!-- Material Design Components -->
+    <link rel="stylesheet" href="node_modules/@material/typography/dist/mdc.typography.css">
+    <link rel="stylesheet" href="node_modules/@material/textfield/dist/mdc.textfield.css">
+
+    <link rel="stylesheet" href="css/first-form-main.css">
   </head>
-  <body>
-    <div class="main-container">
-      <div class="form-item">
-          <label for="date">Date</label>
-          <input type="text" id="date" />
-      </div>
+  <body class="mdc-typography">
+    <div class="form-container">
+      <form action="form-2.html" method="post">
+        <div class="form-item">
+          <label for="textfield-no-js">Date:</label>
+          <div class="mdc-textfield">
+            <input type="text" id="textfield-no-js" class="mdc-textfield__input">
+          </div>
+        </div>
+      </form>
     </div>
 
     <script type="text/javascript">
-      // TODO: To initialize jquery date ui
+      // TODO : Initialize MDC componenets & jquery ui
     </script>
   </body>
 </html>
