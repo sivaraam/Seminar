@@ -8,30 +8,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
 
         <!-- Material Design Components -->
         <link rel="stylesheet" href="node_modules/@material/typography/dist/mdc.typography.css">
+        <link rel="stylesheet" href="node_modules/@material/elevation/dist/mdc.elevation.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/main.css">
+
+
     </head>
-    <body>
+    <body class="mdc-typography">
         <!--[if lt IE 8]>
           <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <header class="header-container">
+        <header class="mdc-elevation--z2 header-container">
             <img src="img/logo.jpg" alt="College logo">
             <h1 class="mdc-typography--display1">Seminar hall booking</h1>
         </header>
-        <script src="node_modules/jquery/dist/jquery.js"></script>
 
         <div class="main-container">
-            <div class="iframe-container" referrer="origin">
+            <div class="mdc-elevation--z4 iframe-container" referrer="origin">
                 <iframe src="form-1.html" name="booking-form"></iframe>
             </div>
         </div>
-        
-        <!-- Material design components JS -->
+<!--
+        Material design components JS
         <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
-        <script>mdc.autoInit()</script>
+        <script>
+          /*mdc.autoInit()*/
+        </script>
+ -->
+
     </body>
 </html>
