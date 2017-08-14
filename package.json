@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@material/elevation": "^0.1.11",
+    "@material/textfield": "^0.3.3",
     "@material/typography": "^0.3.0",
     "jquery": "^3.2.1",
     "normalize.css": "^7.0.0"
