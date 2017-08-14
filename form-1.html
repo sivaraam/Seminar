@@ -6,8 +6,11 @@
     <title>First form</title>
 
     <!-- Material Design Components -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
     <link rel="stylesheet" href="node_modules/@material/typography/dist/mdc.typography.css">
     <link rel="stylesheet" href="node_modules/@material/textfield/dist/mdc.textfield.css">
+    <link rel="stylesheet" href="node_modules/@material/select/dist/mdc.select.css">
+    <link rel="stylesheet" href="node_modules/@material/button/dist/mdc.button.css">
 
     <link rel="stylesheet" href="css/form-main.css">
   </head>
@@ -15,9 +18,30 @@
     <div class="form-container">
       <form action="form-2.html" method="post">
         <div class="form-item">
-          <label for="textfield-no-js">Date:</label>
-          <div class="mdc-textfield">
-            <input type="text" id="textfield-no-js" class="mdc-textfield__input">
+          <div class="form-item-label">Date</div>
+          <div class="form-item-input">
+            <div class="mdc-textfield">
+              <input type="text" id="booking-date" class="mdc-textfield__input" placeholder="Choose a date">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-item">
+          <div class="form-item-label">Hall</div>
+          <div class="form-item-input">
+            <select id="hall" class="mdc-select">
+              <option value="" default selected>Choose a hall</option>
+              <option value="cse">CSE</option>
+              <option value="mech">Mech</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-item form-item-final">
+          <div class="form-item-input">
+            <button class="mdc-button mdc-button--raised mdc-button--primary" type="submit">
+              Next
+            </button>
           </div>
         </div>
       </form>
