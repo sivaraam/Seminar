@@ -1,0 +1,33 @@
+SEMINAR_HALL_BOOKINGS
+=====================
+1. Date*
+2. Period*
+3. Hall_Number*^
+4. Staff_ID^
+5. Year
+6. Branch
+7. Section (Default='A')
+
+SEMINAR_HALL
+============
+1. Hall_Number* (Room number of seminar hall)
+2. Branch
+
+STAFF_TABLE_DUMMY
+=================
+1. Staff_ID*
+2. Staff_Name
+3. Department
+
+SUBJECT_HANDLED
+===============
+1. Staff_ID*
+2. Class*
+3. Subject Code
+4. Subject title
+
+Note
+----
+ * - primary key
+ ^ - foreign key
+
