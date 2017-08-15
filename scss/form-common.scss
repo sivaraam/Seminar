@@ -9,8 +9,8 @@ body {
 .form-container {
   width: 90%;
   height: 100%;
-  padding: 0 5%;
-  margin-top: 2%;
+  padding: 2% 5%; /* needs different values for mobile devices */
+  margin-top: 1em;
 
   form {
     width: 100%;
