@@ -27,3 +27,10 @@ html, body {
   margin: 0 auto;
   width: 90%;
 }
+
+/* Media queries */
+@media only screen and (max-height: 650px) {
+  header img {
+    display: none;
+  }
+}
