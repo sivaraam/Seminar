@@ -14,7 +14,7 @@ html, body {
 /* Style the header */
 .header-container {
   text-align: center;
-  height: 25%;
+  max-height: 25%;
 
   h1 {
     margin: 0;
@@ -26,4 +26,11 @@ html, body {
 .main-container {
   margin: 0 auto;
   width: 90%;
+}
+
+/* Media queries */
+@media only screen and (max-height: 650px) {
+  header img {
+    display: none;
+  }
 }
