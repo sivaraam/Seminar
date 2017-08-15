@@ -19,11 +19,25 @@
     .form-item-final {
       padding: ($form-item-padding * 2) $form-item-padding;
     }
+
+    table {
+      border:1px solid;
+      border-collapse: collapse;
+      width: 50%;
+    }
   }
 }
 
-table {
-  border:1px solid;
-  border-collapse: collapse;
-  width: 50%;
+/* overrides as mdc-grid is being used*/
+.form-container {
+  form {
+    .form-items {
+      padding-left: 0;
+    }
+
+    .form-item {
+      padding-left: 0;
+      width: 100%; /* needed to avoid the select bar from crossing boundary of grid */
+    }
+  }
 }
