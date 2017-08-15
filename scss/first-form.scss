@@ -1,21 +1,7 @@
-html {
-  height: 100%;
-}
-
-body {
-  height: 90%;
-}
+@import 'form-common';
 
 .form-container {
-  width: 90%;
-  height: 100%;
-  padding: 0 5%;
-  margin-top: 2%;
-
   form {
-    width: 100%;
-    height: 100%;
-
     $form-item-padding: 2%;
 
     .form-item {
