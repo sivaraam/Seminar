@@ -28,8 +28,9 @@ html, body {
 /* Style the main container */
 .main-container {
   @include mdc-elevation($big-screen-continer-elevation);
-  margin: 0 auto;
-  width: 90%;
+  margin: auto;
+  width: 640px;
+  max-width: 90%;
   margin-top: 1em;
 }
 
