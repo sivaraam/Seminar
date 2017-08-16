@@ -11,7 +11,12 @@
         padding: 2% 1% 1% 0;
 
         button:first-child {
+          // separate the two buttons
           margin-right: 20%;
+
+          // use different colour for button with
+          // lesser importance
+          background-color: rgb(75, 75, 75);
         }
       }
     }
