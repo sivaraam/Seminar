@@ -1,4 +1,7 @@
 /* Main CSS file for site */
+@import "../node_modules/@material/elevation/mixins";
+
+$big-screen-continer-elevation: 4;
 
 html, body {
   /* Ensure html and body takes up full width and height of screen */
@@ -24,6 +27,7 @@ html, body {
 
 /* Style the main container */
 .main-container {
+  @include mdc-elevation($big-screen-continer-elevation);
   margin: 0 auto;
   width: 90%;
   margin-top: 1em;
