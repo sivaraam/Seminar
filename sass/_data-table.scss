@@ -22,11 +22,10 @@ table {
 
   tr {
     border-bottom: $row-border;
+  }
 
-    // don't show the border for the last row in body
-    tbody &:last-child {
+  tbody tr:last-child { // don't show the border for the last row in body
       border-bottom: none;
-    }
   }
 
   /* hover effect */
