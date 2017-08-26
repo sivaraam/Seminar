@@ -1,0 +1,50 @@
+@import "form-common";
+@import "data-table";
+
+/* overrides as 'mdc-grid' is being used */
+.form-container {
+  form {
+    .form-item {
+      width: 100%; // needed to avoid the select bar from crossing boundary of grid
+      padding-left: 0;
+    }
+
+    .form-items {
+      padding-left: 0;
+    }
+  } // .form
+} // .form-container
+
+.form-container {
+  form {
+    .form-item {
+      padding: $form-item-padding;
+
+      .form-item-input {
+        padding: $form-item-input-padding;
+      }
+
+      .form-buttons {
+        position: relative;
+
+        button {
+          &.back-button {
+            margin: $back-button-margin;
+            // use different colour for button with
+            // lesser importance
+            background-color: $back-button-color;
+
+          }
+
+          // make the submit button appear at the
+          // right end of it's 'relative' container
+          &.submit-button {
+            position: absolute;
+            right: 0;
+            margin: $submit-button-margin;
+          }
+        } // button
+      } // .form-buttons
+    } // .form-item
+  } // .form
+} // .form-container
