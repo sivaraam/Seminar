@@ -37,7 +37,7 @@ html, body {
   @include mdc-elevation($container-big-screen-elevation);
   margin: auto;
   width: 640px;
-  max-width: 90%;
+  max-width: 90%; // don't have width more than 90% on smaller screens
   margin: 16px auto 24px auto;
 }
 
