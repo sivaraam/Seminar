@@ -7,14 +7,24 @@
 
       .form-item-input {
         padding: 2% 1% 1% 0;
+      }
 
-        button:first-child {
-          // separate the two buttons
-          margin-right: 20%;
+      .form-buttons {
+        position: relative;
 
-          // use different colour for button with
-          // lesser importance
-          background-color: rgb(75, 75, 75);
+        button {
+          &.back-button {
+            // use different colour for button with
+            // lesser importance
+            background-color: rgb(75, 75, 75);
+            margin-left: 2%;
+          }
+
+          &.submit-button {
+            position: absolute;
+            right: 0;
+            margin-right: 2%;
+          }
         }
       }
     }
