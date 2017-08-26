@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/second-form.css">
+    <link rel="stylesheet" href="css/data-table.css">
 
   </head>
   <body class="mdc-typography">
@@ -35,9 +36,173 @@
           <div class="form-item">
             <div class="form-item-label">Hall Status</div>
             <div class="form-item-input">
-              <!-- TODO : design the table -->
-            </div>
-          </div>
+              <table>
+                <thead>
+                  <th>
+                    <div class="mdc-checkbox checkbox">
+                      <input type="checkbox" class="mdc-checkbox__native-control" name="hour" value="all"/>
+                      <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                          <path class="mdc-checkbox__checkmark__path"
+                                fill="none"
+                                stroke="white"
+                                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                      </div>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="data">
+                      Hour
+                    </div>
+                  </th>
+                  <th>
+                    <div class="data">
+                      Status
+                    </div>
+                  </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="mdc-checkbox checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" name="hour" value="1"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark__path"
+                                  fill="none"
+                                  stroke="white"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        I
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        Available
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="mdc-checkbox checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" name="hour" value="2"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark__path"
+                                  fill="none"
+                                  stroke="white"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        II
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        Booked by Bob
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="mdc-checkbox checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" name="hour" value="3"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark__path"
+                                  fill="none"
+                                  stroke="white"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        III
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        Available
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="mdc-checkbox checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" name="hour" value="4"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark__path"
+                                  fill="none"
+                                  stroke="white"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        IV
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        Booked for CS6301
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="mdc-checkbox checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" name="hour" value="5"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark__path"
+                                  fill="none"
+                                  stroke="white"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        V
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data">
+                        Booked by Alice
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div> <!-- .form-item-input -->
+          </div> <!-- .form-item -->
 
           <div class="mdc-layout-grid form-items">
             <div class="mdc-layout-grid__inner">

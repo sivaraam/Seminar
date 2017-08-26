@@ -1,0 +1,49 @@
+@import "../node_modules/@material/elevation/mixins";
+@import "font-stack";
+@import "values";
+
+table {
+  @include mdc-elevation($table-elevation);
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  thead, tr {
+    border-bottom: 1px solid $table-boder-color;
+  }
+
+  // don't show the border for the last row in body
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  tr:hover {
+    background-color: $table-cell-hover-color;
+  }
+
+  th, td {
+    // reset browser values
+    border: 0;
+    margin: 0;
+    border-style: none;
+
+    box-sizing: border-box;
+    vertical-align:middle;
+    text-align: left;
+
+    .checkbox {
+      margin-left: $checkbox-left-margin;
+    }
+  }
+
+  th {
+    font-weight: normal;
+    font-family: $table-header-font-family;
+    color: $table-header-font-color;
+  }
+
+  td {
+    font-family: $table-data-font-family;
+    color: $table-data-font-color;
+  }
+}
