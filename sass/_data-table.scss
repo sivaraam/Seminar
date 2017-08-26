@@ -1,0 +1,60 @@
+@import "../node_modules/@material/elevation/mixins";
+@import "data-table-values";
+
+/*  reset browser values */
+table {
+  border-spacing: 0;
+
+  th,td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+  }
+}
+
+table {
+  @include mdc-elevation($table-elevation);
+  width: 100%;
+
+  /* border */
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: $row-border;
+
+    // don't show the border for the last row in body
+    tbody &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  /* hover effect */
+  tbody tr:hover {
+    background-color: $row-hover-color;
+  }
+
+  /* alignment */
+  th, td {
+    box-sizing: border-box;
+    vertical-align: middle;
+    text-align: left;
+  }
+
+  /* checkbox margin */
+  .checkbox {
+    margin-left: $checkbox-left-margin;
+  }
+
+  /* font values */
+  th {
+    font-weight: normal;
+    font-family: $table-header-font-family;
+    color: $table-header-font-color;
+  }
+
+  td {
+    font-family: $table-data-font-family;
+    color: $table-data-font-color;
+  }
+}

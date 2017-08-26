@@ -1,17 +1,26 @@
-// common values
+/*
+ Values that have set of four values are in the order,
+
+      <top> <right> <bottom> <left>
+
+*/
+
+/* common values */
 $header-elevation: 2;
+$header-max-height: 25%;
+$title-padding: 5px 0;
+$container-width: 640px;
+$container-max-width: 90%;
+$container-margin: 16px auto 24px auto;
 $container-big-screen-elevation: 4;
 $container-small-screen-elevation: 0;
 
-// form values
+/* form values */
+$form-container-padding: 3% 5%;
 $form-item-padding: 2%;
+$form-item-input-padding: 2% 1% 1% 0;
 
-// value for data table
-$table-elevation: 2;
-$table-boder-color: #E0E0E0;
-$table-cell-hover-color: #EEEEEE;
-$checkbox-left-margin: 8px;
-$table-header-font-family: "Roboto Medium";
-$table-header-font-color: #373737;
-$table-data-font-family: "Roboto Regular";
-$table-data-font-color: #3B3B3B;
+/* button values */
+$back-button-color: rgb(75, 75, 75);
+$back-button-margin: 0 0 0 2%;
+$submit-button-margin: 0 2% 0 0;

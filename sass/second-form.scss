@@ -1,4 +1,19 @@
-@import 'form-common';
+@import "form-common";
+@import "data-table";
+
+/* overrides as 'mdc-grid' is being used */
+.form-container {
+  form {
+    .form-item {
+      width: 100%; // needed to avoid the select bar from crossing boundary of grid
+      padding-left: 0;
+    }
+
+    .form-items {
+      padding-left: 0;
+    }
+  } // .form
+} // .form-container
 
 .form-container {
   form {
@@ -6,7 +21,7 @@
       padding: $form-item-padding;
 
       .form-item-input {
-        padding: 2% 1% 1% 0;
+        padding: $form-item-input-padding;
       }
 
       .form-buttons {
@@ -14,33 +29,22 @@
 
         button {
           &.back-button {
+            margin: $back-button-margin;
             // use different colour for button with
             // lesser importance
-            background-color: rgb(75, 75, 75);
-            margin-left: 2%;
+            background-color: $back-button-color;
+
           }
 
+          // make the submit button appear at the
+          // right end of it's 'relative' container
           &.submit-button {
             position: absolute;
             right: 0;
-            margin-right: 2%;
+            margin: $submit-button-margin;
           }
-        }
-      }
-    }
-  }
-}
-
-/* overrides as mdc-grid is being used*/
-.form-container {
-  form {
-    .form-items {
-      padding-left: 0;
-    }
-
-    .form-item {
-      padding-left: 0;
-      width: 100%; /* needed to avoid the select bar from crossing boundary of grid */
-    }
-  }
-}
+        } // button
+      } // .form-buttons
+    } // .form-item
+  } // .form
+} // .form-container

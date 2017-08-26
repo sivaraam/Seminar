@@ -13,7 +13,6 @@
 
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/second-form.css">
-    <link rel="stylesheet" href="css/data-table.css">
 
   </head>
   <body>
@@ -38,30 +37,32 @@
             <div class="form-item-input">
               <table>
                 <thead>
-                  <th>
-                    <div class="mdc-checkbox checkbox">
-                      <input type="checkbox" class="mdc-checkbox__native-control" name="hour" value="all"/>
-                      <div class="mdc-checkbox__background">
-                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                          <path class="mdc-checkbox__checkmark__path"
-                                fill="none"
-                                stroke="white"
-                                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                        </svg>
-                        <div class="mdc-checkbox__mixedmark"></div>
+                  <tr>
+                    <th>
+                      <div class="mdc-checkbox checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" name="hour" value="all"/>
+                        <div class="mdc-checkbox__background">
+                          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark__path"
+                                  fill="none"
+                                  stroke="white"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                          </svg>
+                          <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
                       </div>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="data">
-                      Hour
-                    </div>
-                  </th>
-                  <th>
-                    <div class="data">
-                      Status
-                    </div>
-                  </th>
+                    </th>
+                    <th>
+                      <div class="data">
+                        Hour
+                      </div>
+                    </th>
+                    <th>
+                      <div class="data">
+                        Status
+                      </div>
+                    </th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr>
@@ -204,7 +205,7 @@
             </div> <!-- .form-item-input -->
           </div> <!-- .form-item -->
 
-          <div class="mdc-layout-grid form-items">
+          <div class="mdc-layout-grid form-item form-items">
             <div class="mdc-layout-grid__inner">
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 form-item">
                 <div class="form-item-label">Subject</div>
