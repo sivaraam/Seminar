@@ -210,7 +210,7 @@
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 form-item">
                 <div class="form-item-label">Subject</div>
                 <div class="form-item-input">
-                  <select id="subject" class="mdc-select" name="subject">
+                  <select id="subject" class="mdc-select" name="subject" required>
                     <option value="" default selected>Choose a subject</option>
                     <option value="ge6151">GE6151 Computer Programming</option>
                     <option value="me6351">MA6351 Transforms and Partial Differential Equations</option>
@@ -222,7 +222,7 @@
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 form-item">
                 <div class="form-item-label">Class</div>
                 <div class="form-item-input">
-                  <select id="subject" class="mdc-select" name="class">
+                  <select id="subject" class="mdc-select" name="class" required>
                     <option value="" default selected>Choose a class</option>
                     <option value="4-a">1st year 'A'</option>
                     <option value="4-b">1st year 'B'</option>
@@ -234,7 +234,7 @@
 
           <div class="form-item">
             <div class="form-item-input form-buttons">
-              <button class="mdc-button mdc-button--raised mdc-button--primary back-button">
+              <button class="mdc-button mdc-button--raised mdc-button--primary back-button" formnovalidate type="button">
                 Back
               </button>
 
