@@ -11,6 +11,11 @@
     <!-- Material Design Components -->
     <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
 
+    <!-- jQuery UI styles -->
+    <link rel="stylesheet" href="node_modules/jquery-ui/themes/base/core.css">
+    <link rel="stylesheet" href="node_modules/jquery-ui/themes/base/theme.css">
+    <link rel="stylesheet" href="node_modules/jquery-ui/themes/base/datepicker.css">
+
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/first-form.css">
   </head>
@@ -32,7 +37,7 @@
             <div class="form-item-label">Date</div>
             <div class="form-item-input">
               <div class="mdc-textfield">
-                <input type="text" class="mdc-textfield__input" placeholder="Choose a date" name="booking-date" required>
+                <input id="booking-date" type="text" class="mdc-textfield__input" name="booking-date" required placeholder="Choose a date">
               </div>
             </div>
           </div>
@@ -58,6 +63,14 @@
         </form>
       </div> <!-- form-container -->
     </div> <!-- main-container -->
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/datepicker.js"></script>
+    <script type="text/javascript">
+    $( function() {
+      $( "#booking-date" ).datepicker();
+    } );
+    </script>
 <!--
     Material design components JS
     <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
