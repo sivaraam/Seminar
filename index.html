@@ -74,8 +74,8 @@
       // JS wraps the date for us
       const maxDate = new Date(currServerYear, currServerMonth, currServerDay + 6);
 
-      $(() => {
-        $( "#booking-date" ).datepicker({ minDate: currServerDate, maxDate: maxDate });
+      $(function() {
+        $( "#booking-date" ).datepicker({ minDate: currServerDate, maxDate: maxDate, dateFormat: "dd M yy" });
       });
     </script>
 <!--
