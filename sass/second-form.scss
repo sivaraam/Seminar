@@ -2,6 +2,11 @@
 @import "form-common";
 @import "data-table";
 
+// hide the template
+.template {
+  display: none;
+}
+
 /* overrides as 'mdc-grid' is being used */
 .form-container {
   .form-item {
