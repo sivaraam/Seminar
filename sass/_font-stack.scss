@@ -1,4 +1,23 @@
 @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src:  local('Roboto Light'), url("/fonts/Roboto-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), url("/fonts/Roboto-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url("/fonts/Roboto-Regular.woff") format("woff");
+}
+
+@font-face {
   font-family: "Roboto Regular";
   src: url("/fonts/Roboto-Regular.woff") format("woff");
 }
