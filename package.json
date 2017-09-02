@@ -4,7 +4,10 @@
   "description": "Seminar Hall implementation for the college",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass --source-map true --output-style compressed --include-path ./node_modules -r sass -o css",
+    "watch:sass": "node-sass --watch --source-map true --output-style compressed --include-path ./node_modules -r sass -o css",
+    "build": "npm run compile:sass"
   },
   "repository": {
     "type": "git",
@@ -21,7 +24,8 @@
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.4.0",
     "browserify": "^14.3.0",
-    "eslint": "^3.19.0"
+    "eslint": "^3.19.0",
+    "node-sass": "^4.5.3"
   },
   "dependencies": {
     "jquery": "^3.2.1",

@@ -1,14 +1,5 @@
-SASS = $(shell which sass)
 NPM = $(shell which npm)
 NODE = $(shell which node || which nodejs)
-
-ifeq "" "$(SASS)"
-sass_fail:
-	@echo "Please install Sass"
-	@echo "Visit http://sass-lang.com/install for more details"
-	@echo "On Ubuntu/Debian try: sudo apt-get install sass"
-	exit 1
-endif
 
 ifneq "" "$(NODE_DIR)"
 NPM = $(NODE_DIR)/bin/npm
@@ -31,10 +22,10 @@ dir_param = "$(source_dir):$(destination_dir)"
 import_dirs = "./node_modules"
 
 all: node_modules
-	$(SASS) --load-path $(import_dirs) --update $(dir_param)
+	$(NPM) run build
 
 node_modules: package.json
 	$(NPM) install
 
 watch: all
-	$(SASS) --load-path $(import_dirs) --watch $(dir_param)
+	$(NPM) run watch:sass
