@@ -33,7 +33,7 @@ import_dirs = "./node_modules"
 all: node_modules
 	$(SASS) --load-path $(import_dirs) --update $(dir_param)
 
-node_modules:
+node_modules: package.json
 	$(NPM) install
 
 watch: all
