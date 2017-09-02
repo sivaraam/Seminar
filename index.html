@@ -67,9 +67,16 @@
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/datepicker.js"></script>
     <script type="text/javascript">
-    $( function() {
-      $( "#booking-date" ).datepicker();
-    } );
+      const currServerYear = 2017;
+      const currServerMonth = 9 - 1;   // Month: 0-11
+      const currServerDay = 28;
+      const currServerDate = new Date(currServerYear, currServerMonth, currServerDay);
+      // JS wraps the date for us
+      const maxDate = new Date(currServerYear, currServerMonth, currServerDay + 6);
+
+      $(() => {
+        $( "#booking-date" ).datepicker({ minDate: currServerDate, maxDate: maxDate });
+      });
     </script>
 <!--
     Material design components JS
