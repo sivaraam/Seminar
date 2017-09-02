@@ -1,50 +1,60 @@
+@import "../node_modules/@material/layout-grid/mixins";
 @import "form-common";
 @import "data-table";
 
 /* overrides as 'mdc-grid' is being used */
 .form-container {
-  form {
-    .form-item {
-      width: 100%; // needed to avoid the select bar from crossing boundary of grid
-      padding-left: 0;
-    }
+  .form-item {
+    width: 100%; // needed to avoid the select bar from crossing boundary of grid
+    padding-left: 0;
+  }
 
-    .form-items {
-      padding-left: 0;
-    }
-  } // .form
+  .form-items {
+    padding-left: 0;
+  }
 } // .form-container
 
 .form-container {
-  form {
-    .form-item {
-      padding: $form-item-padding;
+  /* style the data from previous form */
+  .known-data {
+    width: $known-data-width;
+    margin: 0 auto;
+    text-align: center;
+    font: 0.8rem;
+    color: $secondary-text-color;
 
-      .form-item-input {
-        padding: $form-item-input-padding;
-      }
+    .title {
+      font-weight: 600;
+    }
+  }
 
-      .form-buttons {
-        position: relative;
+  .form-item {
+    padding: $form-item-padding;
 
-        button {
-          &.back-button {
-            margin: $back-button-margin;
-            // use different colour for button with
-            // lesser importance
-            background-color: $back-button-color;
+    .form-item-input {
+      padding: $form-item-input-padding;
+    }
 
-          }
+    .form-buttons {
+      position: relative;
 
-          // make the submit button appear at the
-          // right end of it's 'relative' container
-          &.submit-button {
-            position: absolute;
-            right: 0;
-            margin: $submit-button-margin;
-          }
-        } // button
-      } // .form-buttons
-    } // .form-item
-  } // .form
+      button {
+        &.back-button {
+          margin: $back-button-margin;
+          // use different colour for button with
+          // lesser importance
+          background-color: $back-button-color;
+
+        }
+
+        // make the submit button appear at the
+        // right end of it's 'relative' container
+        &.submit-button {
+          position: absolute;
+          right: 0;
+          margin: $submit-button-margin;
+        }
+      } // button
+    } // .form-buttons
+  } // .form-item
 } // .form-container
