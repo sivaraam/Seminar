@@ -16,11 +16,6 @@ endif
 
 .PHONY: all watch
 
-source_dir = "sass"
-destination_dir = "css"
-dir_param = "$(source_dir):$(destination_dir)"
-import_dirs = "./node_modules"
-
 all: node_modules
 	$(NPM) run build
 
