@@ -18,14 +18,17 @@
 
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/first-form.css">
+    
+    <!--IntroJS style -->
+    <link href="css/introjs.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body onload="javascript:introJs().start();">
     <!--[if lt IE 8]>
       <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header class="header-container">
+    <header class="header-container" data-step="1" data-intro="Welcome! Let us go through a short tutorial on how to book a seminar hall">
         <img src="img/logo.jpg" alt="College logo">
         <h1>Seminar hall booking</h1>
     </header>
@@ -35,7 +38,7 @@
         <form action="LOREM IPSOM" method="post">
           <div class="form-item">
             <div class="form-item-label">Date</div>
-            <div class="form-item-input">
+            <div class="form-item-input" data-step="2" data-intro="Choose your desired date">
               <div class="mdc-textfield">
                 <input id="booking-date" type="text" class="mdc-textfield__input" name="booking-date" required placeholder="Choose a date" autocomplete="off">
               </div>
@@ -44,7 +47,7 @@
 
           <div class="form-item">
             <div class="form-item-label">Hall</div>
-            <div class="form-item-input">
+            <div class="form-item-input" data-step="3" data-intro="Choose the seminar hall you want to book">
               <select class="mdc-select" name="hall" required>
                 <option value="" selected>Choose a hall</option>
                 <option value="cse">CSE</option>
@@ -54,7 +57,7 @@
           </div>
 
           <div class="form-item">
-            <div class="form-item-input">
+            <div class="form-item-input" data-step="4" data-intro="Click this to proceed for choosing the desired hour">
               <button class="mdc-button mdc-button--raised mdc-button--primary" type="submit">
                 Next
               </button>
@@ -63,7 +66,7 @@
         </form>
       </div> <!-- form-container -->
     </div> <!-- main-container -->
-
+    <script type="text/javascript" src="js/intro.js"></script>
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/datepicker.js"></script>
     <script type="text/javascript">
