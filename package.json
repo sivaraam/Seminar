@@ -28,6 +28,7 @@
     "node-sass": "^4.5.3"
   },
   "dependencies": {
+    "intro.js": "file:node_modules/intro.js",
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1",
     "material-components-web": "^0.17.0",
