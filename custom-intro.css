@@ -1,0 +1,43 @@
+.customDefault { 
+    color: white;
+    background: #66b9bf;
+    font-weight: bold;
+}
+.customDefault .introjs-skipbutton {
+    color: white;
+    background: #eeaa7b;
+}
+.customDefault .introjs-prevbutton {
+    color: white;
+    background: #07889b;
+}
+.customDefault .introjs-nextbutton {
+    color: white;
+    background: #e37222;
+}
+.customDefault .introjs-disabled{
+    display: none;
+}
+.introjs-bullets ul li a {
+    background: white;
+}
+.introjs-bullets ul li a:hover {
+    background: black;
+}
+.introjs-bullets ul li a.active {
+    background: black;
+}
+.introjs-arrow.top {
+    top: -10px;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:#66b9bf;
+    border-left-color:transparent;
+}
+.introjs-arrow.bottom {
+  bottom: -10px;
+  border-top-color:#66b9bf;
+  border-right-color:transparent;
+  border-bottom-color:transparent;
+  border-left-color:transparent;
+}
