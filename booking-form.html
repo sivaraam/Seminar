@@ -16,8 +16,12 @@
     
     <!--IntroJS style -->
     <link rel="stylesheet" href="node_modules/intro.js/introjs.css">
+	  
+	<!--Custom IntroJS colors -->
+    <link rel="stylesheet" href="custom-intro.css" >
+	  
   </head>
-  <body onload="javascript:introJs().start();">
+  <body onload="javascript:startIntro();">
     <!--[if lt IE 8]>
       <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -47,7 +51,7 @@
         <form action="LOREM IPSOM" method="post">
           <div class="form-item">
             <div class="form-item-label">Hall Status</div>
-            <div class="form-item-input" data-step="1" data-intro="Choose your desired hour">
+            <div class="form-item-input" id="step1">
               <table>
                 <thead>
                   <tr>
@@ -248,7 +252,7 @@
             <div class="mdc-layout-grid__inner">
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 form-item">
                 <div class="form-item-label">Subject</div>
-                <div class="form-item-input" data-step="2" data-intro="Choose the subject your are handling">
+                <div class="form-item-input" id="step2">
                   <select class="mdc-select" name="subject" required>
                     <option value="" selected>Choose a subject</option>
                     <option value="ge6151">GE6151 Computer Programming</option>
@@ -260,7 +264,7 @@
 
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 form-item">
                 <div class="form-item-label">Class</div>
-                <div class="form-item-input" data-step="3" data-intro="Choose the class">
+                <div class="form-item-input" id="step3">
                   <select class="mdc-select" name="class" required>
                     <option value="" selected>Choose a class</option>
                     <option value="4-a">1st year 'A'</option>
@@ -273,11 +277,11 @@
 
           <div class="form-item">
             <div class="form-item-input form-buttons">
-              <button class="mdc-button mdc-button--raised mdc-button--primary back-button" formnovalidate type="button" data-step="5" data-intro="You can go back if you want to change the date or the seminar hall">
+              <button class="mdc-button mdc-button--raised mdc-button--primary back-button" formnovalidate type="button" id="step4">
                 Back
               </button>
 
-              <button class="mdc-button mdc-button--raised mdc-button--primary submit-button" type="submit" data-step="4" data-intro="All done! Click this to book the seminar hall">
+              <button class="mdc-button mdc-button--raised mdc-button--primary submit-button" type="submit" id="step5">
                 Book
               </button>
             </div> <!-- .form-item-input -->
@@ -285,7 +289,38 @@
         </form>
       </div> <!-- form-container -->
     </div> <!-- main-container -->
-    
+    <script type="text/javascript">
+      function startIntro() {
+        var intro = introJs().setOption('exitOnOverlayClick', false).setOption('disableInteraction', true).setOption('showStepNumbers',false).setOption('tooltipClass', 'customDefault');
+
+        intro.setOptions({
+          steps: [
+            {
+              element: '#step1',
+              intro: "Choose your desired hour"
+            },
+            {
+              element: '#step2',
+              intro: "Then choose the subject your are handling"
+            },
+            {
+              element: '#step3',
+              intro: "Then choose the class for which you are handling the  subject"
+            },
+            {
+              element: '#step4',
+              intro: "You can go back if you want to change the date or the seminar hall"
+            },
+            {
+              element: '#step5',
+              intro: "All done! Click this button to book the seminar hall"
+            }
+          ]
+        });
+
+        intro.start();
+      }
+    </script>
     <script type="text/javascript" src="node_modules/intro.js/intro.js"></script>
     <script type="text/javascript">
       // TODO : Initialize MDC componenets & jquery ui
