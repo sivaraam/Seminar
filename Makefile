@@ -14,9 +14,13 @@ node_fail:
 endif
 endif
 
+JAVA_SOURCES='java_resources/'
+CLASS_DEST='WEB-INF/classes'
+SERVLET_API='/opt/apache-tomcat-8.5.15/lib/servlet-api.jar'
+
 .PHONY: all watch
 
-all: node_modules
+all: node_modules java-resources
 	$(NPM) run build
 
 node_modules: package.json
@@ -24,3 +28,7 @@ node_modules: package.json
 
 watch: all
 	$(NPM) run watch:sass
+
+java-resources:
+	mkdir -p $(CLASS_DEST)
+	javac -d WEB-INF/classes -classpath /opt/apache-tomcat-8.5.15/lib/servlet-api.jar java_resources/*/*
