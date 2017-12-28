@@ -7,3 +7,5 @@ node_modules/
 # Ignore sass generated files
 .sass-cache/
 css/
+nbproject/
+WEB-INF/classes
