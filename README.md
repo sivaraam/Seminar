@@ -14,4 +14,4 @@ To generate the CSS files required by the project run,
 
 That's it, for now.!
 
-##### Psss. This project is done partly to help enhance our web development skills. :smile:
+##### Psss. This project is done to help enhance our web development skills. :smile:
