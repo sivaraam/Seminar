@@ -31,5 +31,9 @@ The following typical steps are required to run this project using tomcat,
 1. Start the tomcat server and open the app typically using
    http://localhost:8080/Seminar
 
+Note: This project also requires that a database to run for it to interact with.
+The structure of the tables in the database aren't documented currently which is
+unfortunate.
+
 
 ##### Psss. This project is done partly to help enhance our web development skills. :smile:
