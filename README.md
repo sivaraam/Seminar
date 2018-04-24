@@ -24,12 +24,12 @@ was tested using version 8.5.
 
 The following typical steps are required to run this project using tomcat,
 
-    1. Clone this repo into the 'webapps' folder of the tomcat installation
+1. Clone this repo into the 'webapps' folder of the tomcat installation
 
-    2. Run 'make' inside the root of this repository
+1. Run 'make' inside the root of this repository
 
-    3. Start the tomcat server and open the app typically using
-       http://localhost:8080/Seminar
+1. Start the tomcat server and open the app typically using
+   http://localhost:8080/Seminar
 
 
 ##### Psss. This project is done partly to help enhance our web development skills. :smile:
