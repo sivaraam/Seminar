@@ -15,7 +15,6 @@ To generate the CSS files and to class files required by the project run,
 
 That's it, for now.!
 
-
 #### RUNNING
 
 To run this a recent version of apache tomcat is required. This repo
@@ -36,4 +35,4 @@ The structure of the tables in the database aren't documented currently which is
 unfortunate.
 
 
-##### Psss. This project is done partly to help enhance our web development skills. :smile:
+##### Psss. This project is done to help enhance our web development skills. :smile:
