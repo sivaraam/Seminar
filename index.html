@@ -18,9 +18,16 @@
 
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/first-form.css">
+    
+    <!--IntroJS style -->
+    <link rel="stylesheet" href="node_modules/intro.js/introjs.css" >
+	  
+    <!--Custom IntroJS colors -->
+    <link rel="stylesheet" href="custom-intro.css" >
+
   </head>
 
-  <body>
+  <body onload="javascript:startIntro();">
     <!--[if lt IE 8]>
       <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -32,7 +39,7 @@
 
     <div class="main-container">
       <div class="form-container">
-        <form action="LOREM IPSOM" method="post">
+        <form action="booking-form.html" method="post">
           <div class="form-item">
             <div class="form-item-label">Date</div>
             <div class="form-item-input">
@@ -45,7 +52,7 @@
           <div class="form-item">
             <div class="form-item-label">Hall</div>
             <div class="form-item-input">
-              <select class="mdc-select" name="hall" required>
+              <select id="seminar-hall" class="mdc-select" name="hall" required>
                 <option value="" selected>Choose a hall</option>
                 <option value="cse">CSE</option>
                 <option value="mech">Mech</option>
@@ -55,7 +62,7 @@
 
           <div class="form-item">
             <div class="form-item-input">
-              <button class="mdc-button mdc-button--raised mdc-button--primary" type="submit">
+              <button id="next-button" class="mdc-button mdc-button--raised mdc-button--primary" type="submit">
                 Next
               </button>
             </div>
@@ -63,7 +70,7 @@
         </form>
       </div> <!-- form-container -->
     </div> <!-- main-container -->
-
+    <script type="text/javascript" src="node_modules/intro.js/intro.js"></script>
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="node_modules/jquery-ui/ui/widgets/datepicker.js"></script>
     <script type="text/javascript">
@@ -78,6 +85,33 @@
         $( "#booking-date" ).datepicker({ minDate: currServerDate, maxDate: maxDate, dateFormat: "dd M yy" });
       });
     </script>
+    <script type="text/javascript">
+      function startIntro() {
+        var intro = introJs().setOption('exitOnOverlayClick', false).setOption('disableInteraction', true).setOption('showStepNumbers',false).setOption('tooltipClass', 'customDefault');
+        intro.setOptions({
+          steps: [
+            {
+              intro: "Welcome! Let us go through a short tutorial on how to book a seminar hall"
+            },
+            {
+              element: '#booking-date',
+              intro: "First choose your desired date"      
+            },
+            {
+              element: '#seminar-hall',
+              intro: "Then choose the seminar hall you want to book"
+            },
+            {
+              element: '#next-button',
+              intro: "Then click this button to proceed for choosing the desired hour"
+            }
+          ]
+        });
+
+        intro.start();
+      }
+    </script>
+
 <!--
     Material design components JS
     <script src="node_modules/material-components-web/dist/material-components-web.js"></script>

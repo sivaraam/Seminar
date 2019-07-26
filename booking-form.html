@@ -13,9 +13,15 @@
 
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/second-form.css">
-
+    
+    <!--IntroJS style -->
+    <link rel="stylesheet" href="node_modules/intro.js/introjs.css">
+	  
+	<!--Custom IntroJS colors -->
+    <link rel="stylesheet" href="custom-intro.css" >
+	  
   </head>
-  <body>
+  <body onload="javascript:startIntro();">
     <!--[if lt IE 8]>
       <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -46,7 +52,7 @@
           <div class="form-item">
             <div class="form-item-label">Hall Status</div>
             <div class="form-item-input">
-              <table>
+              <table id="hall-status">
                 <thead>
                   <tr>
                     <th>
@@ -247,7 +253,7 @@
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 form-item">
                 <div class="form-item-label">Subject</div>
                 <div class="form-item-input">
-                  <select class="mdc-select" name="subject" required>
+                  <select class="mdc-select" id="subject" name="subject" required>
                     <option value="" selected>Choose a subject</option>
                     <option value="ge6151">GE6151 Computer Programming</option>
                     <option value="me6351">MA6351 Transforms and Partial Differential Equations</option>
@@ -259,7 +265,7 @@
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 form-item">
                 <div class="form-item-label">Class</div>
                 <div class="form-item-input">
-                  <select class="mdc-select" name="class" required>
+                  <select class="mdc-select" id="class" name="class" required>
                     <option value="" selected>Choose a class</option>
                     <option value="4-a">1st year 'A'</option>
                     <option value="4-b">1st year 'B'</option>
@@ -271,11 +277,11 @@
 
           <div class="form-item">
             <div class="form-item-input form-buttons">
-              <button class="mdc-button mdc-button--raised mdc-button--primary back-button" formnovalidate type="button">
+              <button class="mdc-button mdc-button--raised mdc-button--primary back-button" formnovalidate type="button" id="back-button">
                 Back
               </button>
 
-              <button class="mdc-button mdc-button--raised mdc-button--primary submit-button" type="submit">
+              <button class="mdc-button mdc-button--raised mdc-button--primary submit-button" type="submit" id="book-button">
                 Book
               </button>
             </div> <!-- .form-item-input -->
@@ -283,7 +289,39 @@
         </form>
       </div> <!-- form-container -->
     </div> <!-- main-container -->
+    <script type="text/javascript">
+      function startIntro() {
+        var intro = introJs().setOption('exitOnOverlayClick', false).setOption('disableInteraction', true).setOption('showStepNumbers',false).setOption('tooltipClass', 'customDefault');
 
+        intro.setOptions({
+          steps: [
+            {
+              element: '#hall-status',
+              intro: "Choose your desired hour"
+            },
+            {
+              element: '#subject',
+              intro: "Then choose the subject your are handling"
+            },
+            {
+              element: '#class',
+              intro: "Then choose the class for which you are handling the  subject"
+            },
+            {
+              element: '#back-button',
+              intro: "You can go back if you want to change the date or the seminar hall"
+            },
+            {
+              element: '#book-button',
+              intro: "All done! Click this button to book the seminar hall"
+            }
+          ]
+        });
+
+        intro.start();
+      }
+    </script>
+    <script type="text/javascript" src="node_modules/intro.js/intro.js"></script>
     <script type="text/javascript">
       // TODO : Initialize MDC componenets & jquery ui
     </script>
